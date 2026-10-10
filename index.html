@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王雅茜 · 知识产权律师 | 上海如闻律师事务所</title>
+<style>
+/* ==================================================================
+   SECTION: 主题变量（紫色主色调 · 低饱和 · 明度对齐原蓝色）
+   ================================================================== */
+:root{
+  --navy:#2f2342;
+  --navy-2:#452d5a;
+  --navy-3:#573971;
+  --navy-soft:#efeaf4;
+  --gold:#a8834a;
+  --gold-2:#c9a45c;
+  --ink:#221c2c;
+  --paper:#f7f5f8;
+  --card:#ffffff;
+  --line:#e7e2ec;
+  --muted:#6f6879;
+  --sd-1:0 2px 8px rgba(47,35,66,.05);
+  --sd-2:0 6px 20px rgba(47,35,66,.09);
+  --sd-3:0 14px 38px rgba(47,35,66,.16);
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Songti SC","Noto Serif SC","SimSun",serif;
+  background-color:var(--paper);
+  background-image:radial-gradient(circle at 100% 0%,rgba(87,57,113,.06),transparent 55%);
+  background-repeat:no-repeat;background-size:100% 760px;
+  color:var(--ink);line-height:1.75;font-weight:600;
+  min-height:100vh;display:flex;flex-direction:column;
+  -webkit-font-smoothing:antialiased;
+}
+main#view{flex:1 0 auto;}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+
+/* ==================================================================
+   SECTION: 顶部导航
+   ================================================================== */
+header{
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(90deg,rgba(47,35,66,.98) 0%,rgba(69,45,90,.98) 100%);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+  box-shadow:0 2px 16px rgba(47,35,66,.28);
+}
+.navbar{display:flex;align-items:center;justify-content:space-between;height:64px;}
+.brand{color:#fff;font-size:19px;letter-spacing:2px;font-weight:700;cursor:pointer;white-space:nowrap;}
+.brand em{color:var(--gold-2);font-style:normal;font-size:13px;margin-left:8px;letter-spacing:1px;font-weight:400;}
+.nav-links{display:flex;gap:4px;list-style:none;}
+.nav-links li{flex-shrink:0;}
+.nav-links a{
+  display:block;color:#e6e0ee;font-size:15px;padding:8px 12px;border-radius:6px;
+  cursor:pointer;letter-spacing:1px;font-weight:400;
+  white-space:normal;word-break:keep-all;
+  transition:background .2s,color .2s;
+}
+.nav-links a:hover{background:rgba(255,255,255,.12);color:#fff;}
+.nav-links a.active{color:var(--gold-2);background:rgba(255,255,255,.10);font-weight:600;}
+.nav-toggle{
+  display:none;background:none;border:1px solid rgba(255,255,255,.4);color:#fff;
+  border-radius:6px;font-size:20px;width:42px;height:40px;cursor:pointer;
+}
+
+/* ==================================================================
+   SECTION: 首页头图
+   ================================================================== */
+.hero{
+  position:relative;overflow:hidden;
+  padding:56px 0 52px;color:#fff;
+  background:
+    radial-gradient(circle at 12% -10%,rgba(201,164,92,.18),transparent 55%),
+    radial-gradient(circle at 92% 110%,rgba(130,96,170,.35),transparent 55%),
+    linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 55%,var(--navy-3) 100%);
+}
+.hero::after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(201,164,92,.55),transparent);
+}
+.hero-inner{display:flex;align-items:center;gap:56px;}
+.hero-photo{flex:0 0 280px;}
+.photo-frame{
+  width:280px;height:340px;border-radius:14px;overflow:hidden;
+  border:3px solid rgba(201,164,92,.62);
+  box-shadow:0 14px 40px rgba(20,12,32,.42);
+  background:linear-gradient(160deg,#4a3560,#2c2040);
+  display:flex;align-items:center;justify-content:center;
+}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-fallback{color:#d8cfe6;font-size:15px;letter-spacing:2px;text-align:center;padding:12px;font-weight:400;}
+.hero-info{flex:1 1 auto;min-width:0;}
+.hero h1{font-size:34px;letter-spacing:8px;margin-bottom:10px;color:#fff;font-weight:700;line-height:1.3;}
+.hero .role{color:var(--gold-2);font-size:17px;letter-spacing:6px;font-weight:400;margin-bottom:14px;}
+.role-divider{width:72px;height:2px;background:var(--gold-2);margin:0 0 20px;}
+.hero-intro{
+  font-size:15.5px;line-height:1.95;color:#cec6db;font-weight:400;
+  max-width:620px;margin-bottom:24px;text-align:justify;
+}
+
+/* 联系方式：桌面两列 / 移动一列 */
+.hero-contact{
+  list-style:none;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px 24px;
+  align-items:start;
+}
+.hero-contact li{display:flex;align-items:center;gap:13px;font-size:15.5px;color:#e8e2f0;font-weight:400;min-width:0;}
+.hero-contact li span:last-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hero-contact .ico{
+  flex:0 0 34px;width:34px;height:34px;border-radius:9px;
+  background:rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center;
+}
+.hero-contact .ico svg{width:16px;height:16px;stroke:#e0d8ec;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hero-contact a.copy-item{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  font-size:15.5px;
+  color:#e8e2f0;
+  font-weight:400;
+  min-width:0;
+  border-radius:8px;
+  padding:2px 6px;
+  margin:-2px -6px;
+  transition:background .2s,color .2s;
+  position:relative;
+  text-decoration:none;
+}
+.hero-contact a.copy-item:hover{
+  background:rgba(255,255,255,.08);
+  color:#fff;
+}
+.hero-contact a.copy-item .copy-text{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+/* 复制成功提示 */
+.copy-toast{
+  position:fixed;
+  left:50%;
+  bottom:60px;
+  transform:translateX(-50%) translateY(12px);
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  color:#fff;
+  font-size:14px;
+  letter-spacing:1px;
+  padding:10px 22px;
+  border-radius:24px;
+  box-shadow:0 10px 26px rgba(47,35,66,.32);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s,transform .25s;
+  z-index:9999;
+  white-space:nowrap;
+}
+.copy-toast.show{
+  opacity:1;
+  transform:translateX(-50%) translateY(0);
+}
+/* ==================================================================
+   SECTION: 首页四宫格
+   ================================================================== */
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:22px;padding:44px 0 8px;}
+.panel{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:26px 26px 22px;box-shadow:var(--sd-1);
+  display:flex;flex-direction:column;
+  transition:box-shadow .25s,transform .25s,border-color .25s;
+}
+.panel:hover{box-shadow:var(--sd-2);transform:translateY(-2px);border-color:#d8cfe3;}
+.panel-head{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  border-bottom:2px solid var(--gold);padding-bottom:10px;margin-bottom:16px;
+}
+.panel-head h2{font-size:20px;font-weight:700;letter-spacing:2px;color:var(--navy);line-height:1.4;}
+.panel-title-link{cursor:pointer;transition:color .2s;}
+.panel-title-link:hover{color:var(--gold);}
+.panel-head .more{font-size:14px;color:var(--gold);cursor:pointer;letter-spacing:1px;font-weight:400;flex:0 0 auto;}
+.panel-head .more:hover{text-decoration:underline;}
+.achieve-list,.art-list{list-style:none;flex:1 1 auto;}
+.achieve-list li{
+  position:relative;padding-left:17px;margin-bottom:12px;
+  font-size:15px;line-height:1.8;color:#3c3448;font-weight:600;text-align:justify;
+}
+.achieve-list li:last-child{margin-bottom:0;}
+.achieve-list li::before{content:"•";position:absolute;left:2px;top:0;color:var(--gold);font-weight:700;}
+.art-list li{margin-bottom:2px;}
+.art-list a{
+  display:block;padding:9px 10px;border-radius:8px;font-size:15.5px;
+  color:#2c2438;cursor:pointer;font-weight:600;line-height:1.55;
+  transition:background .18s,color .18s;
+}
+.art-list a:hover{background:var(--navy-soft);color:var(--navy);}
+.art-list .art-sub{display:block;font-size:13px;color:var(--muted);margin-top:3px;font-weight:400;letter-spacing:.3px;}
+
+/* ==================================================================
+   SECTION: 首页数据条（三个数值）
+   ================================================================== */
+.stats{
+  display:flex;
+  align-items:stretch;
+  justify-content:center;
+  flex-wrap:wrap;
+  background:linear-gradient(180deg,#ffffff 0%,#faf8fc 100%);
+  border:1px solid var(--line);
+  border-radius:14px;
+  box-shadow:var(--sd-1);
+  overflow:hidden;
+  margin:48px 0 68px;
+  position:relative;
+}
+.stats::before{
+  content:"";position:absolute;left:0;right:0;top:0;height:3px;
+  background:linear-gradient(90deg,transparent,rgba(168,131,74,.65),transparent);
+  opacity:.75;
+}
+.stat{
+  flex:1 1 0;
+  min-width:180px;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:32px 22px 28px;
+  position:relative;
+  transition:background .25s;
+}
+.stat:hover{background:rgba(168,131,74,.045);}
+.stat + .stat::before{
+  content:"";position:absolute;
+  left:0;top:26%;bottom:26%;width:1px;
+  background:linear-gradient(180deg,transparent,var(--line),transparent);
+}
+.stat-num{
+  font-family:Georgia,"Times New Roman","Songti SC",serif;
+  font-size:40px;font-weight:700;line-height:1.05;
+  color:var(--navy);letter-spacing:1px;
+  display:flex;align-items:baseline;justify-content:center;
+}
+.stat-num em{
+  font-style:normal;
+  font-size:24px;font-weight:700;
+  color:var(--gold);
+  margin-left:2px;
+  transform:translateY(-4px);
+}
+.stat-label{
+  margin-top:10px;
+  font-size:14px;font-weight:400;
+  color:var(--muted);
+  letter-spacing:4px;
+  text-indent:4px;
+}
+
+/* ==================================================================
+   SECTION: 通用页面
+   ================================================================== */
+.page{padding:44px 0 60px;}
+.page-title{
+  font-size:28px;font-weight:700;letter-spacing:4px;color:var(--navy);
+  border-left:6px solid var(--gold);padding-left:16px;margin-bottom:8px;line-height:1.4;
+}
+.page-sub{color:var(--muted);font-size:15px;font-weight:400;margin-bottom:30px;padding-left:22px;letter-spacing:.3px;}
+
+/* 列表卡片 */
+.list-card{
+  display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:22px 24px;margin-bottom:16px;cursor:pointer;
+  box-shadow:var(--sd-1);
+  transition:box-shadow .22s,transform .22s,border-color .22s;
+}
+.list-card:hover{box-shadow:var(--sd-2);transform:translateY(-2px);border-color:#d8cfe3;}
+.list-card h3{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.5px;line-height:1.55;}
+.list-card .sub{font-size:13.5px;color:var(--gold);margin-bottom:8px;font-weight:400;letter-spacing:.5px;}
+.list-card .excerpt{font-size:15px;color:#5c5568;font-weight:600;text-align:justify;line-height:1.8;}
+.group-label{
+  font-size:18px;font-weight:700;color:var(--navy);letter-spacing:2px;
+  margin:28px 0 14px;padding-left:12px;border-left:4px solid var(--gold);line-height:1.4;
+}
+
+/* ==================================================================
+   SECTION: 个人简介页
+   ================================================================== */
+.profile-block{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:30px;display:flex;gap:34px;align-items:flex-start;box-shadow:var(--sd-1);
+}
+.profile-block .photo-frame{width:210px;height:260px;flex:0 0 210px;}
+.profile-text h2{font-size:26px;font-weight:700;letter-spacing:4px;color:var(--navy);margin-bottom:4px;line-height:1.4;}
+.profile-text .role{color:var(--gold);letter-spacing:3px;margin-bottom:16px;font-weight:600;}
+.info-rows{list-style:none;}
+.info-rows li{
+  display:flex;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);
+  font-size:16px;font-weight:600;line-height:1.75;
+}
+.info-rows li b{flex:0 0 88px;color:var(--navy);font-weight:700;}
+
+/* ==================================================================
+   SECTION: 代理业绩时间轴（年份 + 月份）
+   ================================================================== */
+.timeline{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:12px 34px;box-shadow:var(--sd-1);
+}
+.tl-item{
+  display:flex;gap:26px;padding:28px 0;
+  border-bottom:1px dashed var(--line);
+}
+.tl-item:last-child{border-bottom:none;}
+.tl-year{
+  flex:0 0 100px;
+  font-family:Georgia,"Times New Roman","Songti SC",serif;
+  font-size:32px;font-weight:700;line-height:1.05;
+  color:var(--navy);letter-spacing:1px;
+  padding-bottom:10px;
+  border-bottom:2px solid rgba(168,131,74,.35);
+}
+.tl-month{
+  display:block;
+  font-family:Georgia,"Times New Roman","Songti SC",serif;
+  font-size:17px;font-weight:700;
+  color:var(--gold);
+  letter-spacing:2px;
+  margin-top:10px;
+  line-height:1.4;
+}
+.tl-text{flex:1 1 auto;min-width:0;}
+.tl-text p{font-size:16px;line-height:1.9;color:#372f44;font-weight:600;text-align:justify;}
+
+/* ==================================================================
+   SECTION: 文章阅读页
+   ================================================================== */
+.article-box{
+  max-width:820px;margin:0 auto;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;
+  padding:44px 48px;box-shadow:var(--sd-1);
+}
+.back-link{
+  display:inline-block;margin-bottom:18px;color:var(--gold);font-size:15px;
+  cursor:pointer;letter-spacing:1px;font-weight:400;
+}
+.back-link:hover{text-decoration:underline;}
+.article-box h1{
+  font-size:25px;font-weight:700;line-height:1.5;color:var(--navy);
+  letter-spacing:1px;text-align:center;
+}
+.article-box .art-sub-line{
+  text-align:center;color:var(--gold);font-size:14px;
+  font-weight:400;margin:10px 0 6px;letter-spacing:.5px;
+}
+.article-box .divider{width:64px;height:2px;background:var(--gold);margin:20px auto 26px;}
+.article-box p{font-size:16.5px;color:#372f44;margin-bottom:16px;text-align:justify;font-weight:600;line-height:1.95;}/* 正文中的重点强调：加粗 + 轻微放大 + 深色 */
+/* 正文常规字重略微降低，让强调更突出 */
+.article-box p{
+  font-weight:500;
+}
+
+/* 重点强调：加粗 + 放大 + 主色 + 金色底纹 */
+.article-box p strong{
+  font-weight:900;
+  font-size:1.18em;
+  color:var(--navy);
+  letter-spacing:.8px;
+  padding:0 3px;
+  background:linear-gradient(transparent 62%, rgba(201,164,92,.32) 62%);
+}
+/* 缩小的说明文字（如括号内注释） */
+.article-box p span{
+  font-size:0.85em;
+  color:var(--muted);
+  font-weight:400;
+}
+.article-box h2{
+  font-size:19px;font-weight:700;color:var(--navy);
+  margin:28px 0 14px;letter-spacing:1px;line-height:1.5;
+}
+.article-box h3{
+  font-size:16.5px;font-weight:700;color:var(--navy-2);
+  margin:22px 0 10px;line-height:1.5;
+}
+.article-source{
+  margin-top:26px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:14px;color:var(--muted);font-weight:400;
+}
+
+/* ==================================================================
+   SECTION: 文章图片（优雅呈现）
+   ================================================================== */
+.article-img{
+  margin:32px 0;
+  border-radius:14px;
+  overflow:hidden;
+  box-shadow:0 8px 28px rgba(47,35,66,.12);
+  background:linear-gradient(135deg,#f8f3ec 0%,#f0e9dd 50%,#ece2d2 100%);
+  border:1px solid #e8ddca;
+  position:relative;
+}
+.article-img img{
+  display:block;width:100%;height:auto;
+}
+.article-img-cap{
+  text-align:center;
+  font-size:13.5px;
+  color:#8a7346;
+  font-weight:400;
+  letter-spacing:2px;
+  padding:12px 16px 14px;
+  background:linear-gradient(180deg,#faf6ef,#f4ecdd);
+  border-top:1px solid #e8ddca;
+  line-height:1.6;
+}
+/* 图片缺失占位（由 onerror 触发 .img-missing 类） */
+.article-img.img-missing{
+  min-height:180px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.article-img.img-missing::before{
+  content:"图片待补充";
+  display:block;
+  padding:56px 24px;
+  text-align:center;
+  color:#8a7346;
+  font-size:14px;
+  letter-spacing:4px;
+  text-indent:4px;
+}
+.article-img.img-missing .article-img-cap{
+  width:100%;
+}
+/* 非真实文件名的占位（如 !img 未填图片名） */
+.img-placeholder{
+  padding:52px 24px;
+  text-align:center;
+  color:#8a7346;
+  font-size:14px;
+  letter-spacing:4px;
+  text-indent:4px;
+  line-height:1.7;
+}
+.img-placeholder span{
+  font-size:12.5px;
+  opacity:.8;
+}
+
+/* ==================================================================
+   SECTION: 回到顶部
+   ================================================================== */
+#toTop{
+  position:fixed;right:26px;bottom:32px;width:48px;height:48px;border-radius:50%;
+  border:none;color:#fff;font-size:19px;cursor:pointer;
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  box-shadow:0 8px 22px rgba(47,35,66,.34);
+  display:none;align-items:center;justify-content:center;z-index:60;
+  transition:background .2s,transform .2s;
+}
+#toTop:hover{background:linear-gradient(135deg,var(--gold-2),var(--gold));transform:translateY(-3px);}
+#toTop.show{display:flex;}
+
+/* ==================================================================
+   SECTION: 联系页
+   ================================================================== */
+.contact-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:24px;align-items:start;}
+.contact-info{
+  color:#e8e2f0;border-radius:14px;padding:28px;
+  background:linear-gradient(150deg,var(--navy) 0%,var(--navy-2) 100%);
+  box-shadow:var(--sd-2);
+}
+.contact-info h3{color:var(--gold-2);font-size:19px;font-weight:700;letter-spacing:2px;margin-bottom:16px;line-height:1.4;}
+.contact-info li{
+  list-style:none;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.18);
+  font-size:16px;font-weight:400;display:flex;gap:10px;line-height:1.75;
+}
+.contact-info li b{color:var(--gold-2);flex:0 0 76px;font-weight:700;}
+/* 联系页右侧二维码卡片 */
+.contact-qr{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:34px 28px 30px;
+  box-shadow:var(--sd-1);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+}
+.contact-qr h3{
+  font-size:19px;
+  font-weight:700;
+  color:var(--navy);
+  letter-spacing:2px;
+  margin-bottom:22px;
+  line-height:1.4;
+}
+.qr-wrap{
+  width:200px;
+  height:200px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 6px 20px rgba(47,35,66,.10);
+  border:1px solid var(--line);
+  overflow:hidden;
+  margin-bottom:16px;
+}
+.qr-img{
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  display:block;
+}
+.qr-tip{
+  font-size:14px;
+  color:var(--muted);
+  font-weight:400;
+  letter-spacing:1px;
+  margin-bottom:22px;
+}
+.survey-btn{
+  display:inline-block;
+  padding:11px 30px;
+  border-radius:8px;
+  font-size:15px;
+  font-weight:700;
+  letter-spacing:2px;
+  color:#fff;
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  box-shadow:0 6px 18px rgba(47,35,66,.22);
+  transition:transform .2s, box-shadow .2s, background .2s;
+  text-decoration:none;
+}
+.survey-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 26px rgba(47,35,66,.30);
+  background:linear-gradient(135deg,var(--gold-2),var(--gold));
+}
+.form-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:28px;box-shadow:var(--sd-1);}
+.form-card h3{font-size:19px;font-weight:700;color:var(--navy);letter-spacing:2px;margin-bottom:16px;line-height:1.4;}
+.form-row{margin-bottom:14px;}
+.form-row label{display:block;font-size:15px;color:#4a4356;margin-bottom:6px;font-weight:600;}
+.form-row input,.form-row select,.form-row textarea{
+  width:100%;border:1px solid var(--line);border-radius:8px;padding:10px 12px;
+  font-size:15.5px;font-family:inherit;font-weight:600;color:var(--ink);
+  background:#fcfbfd;transition:border-color .2s,box-shadow .2s;
+}
+.form-row textarea{min-height:110px;resize:vertical;}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{
+  outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(168,131,74,.15);
+}
+.submit-btn{
+  border:none;border-radius:8px;padding:12px 34px;font-size:15.5px;
+  letter-spacing:3px;cursor:pointer;color:#fff;font-weight:700;
+  background:linear-gradient(135deg,var(--navy-2),var(--navy));
+  box-shadow:0 6px 18px rgba(47,35,66,.26);
+  transition:transform .2s,box-shadow .2s,background .2s;
+}
+.submit-btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(47,35,66,.34);background:linear-gradient(135deg,var(--gold-2),var(--gold));}
+.form-ok,.form-err{display:none;margin-top:14px;border-radius:8px;padding:12px 16px;font-size:15.5px;font-weight:600;}
+.form-ok{background:#eef7ee;border:1px solid #bcd9bc;color:#2c6e2c;}
+.form-err{background:#fdeeee;border:1px solid #e5b8b8;color:#a03434;}
+
+/* ==================================================================
+   SECTION: 页脚
+   ================================================================== */
+footer{
+  margin-top:48px;padding:26px 0;color:#bdb3cc;
+  background:linear-gradient(90deg,var(--navy),var(--navy-2));
+}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:14.5px;font-weight:400;}
+
+/* ==================================================================
+   SECTION: 响应式
+   ================================================================== */
+@media (max-width:900px){
+  .nav-toggle{display:block;}
+  .nav-links{
+    display:none;position:absolute;top:64px;left:0;right:0;
+    background:linear-gradient(180deg,var(--navy),var(--navy-2));
+    flex-direction:column;padding:10px 16px 16px;gap:2px;
+    box-shadow:0 12px 26px rgba(47,35,66,.3);
+  }
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:12px 14px;font-size:16px;}
+
+  .hero{padding:40px 0 38px;}
+  .hero-inner{flex-direction:column;align-items:flex-start;gap:26px;}
+  .hero-photo{flex:none;}
+  .photo-frame{width:224px;height:272px;}
+  .hero-info{width:100%;}
+  .hero h1{font-size:29px;letter-spacing:5px;}
+  .hero .role{font-size:16px;letter-spacing:4px;}
+  .hero-intro{font-size:15px;max-width:none;}
+
+  .hero-contact{grid-template-columns:1fr;}
+
+  .panels{grid-template-columns:1fr;}
+
+  .stats{flex-direction:column;margin:40px 0 56px;}
+  .stat{min-width:0;padding:26px 20px;}
+  .stat + .stat::before{
+    left:18%;right:18%;top:0;bottom:auto;
+    width:auto;height:1px;
+    background:linear-gradient(90deg,transparent,var(--line),transparent);
+  }
+  .stat-num{font-size:36px;}
+
+  .contact-grid{grid-template-columns:1fr;}
+  .profile-block{flex-direction:column;align-items:flex-start;text-align:left;}
+  .profile-block .photo-frame{width:200px;height:248px;flex:none;}
+  .article-box{padding:28px 20px;}
+  .timeline{padding:8px 20px;}
+  .tl-item{gap:18px;}
+  .tl-year{flex:0 0 78px;font-size:27px;}
+  .tl-month{font-size:15px;}
+}
+@media (max-width:560px){
+  .page-title{font-size:24px;letter-spacing:3px;}
+  .article-box h1{font-size:21px;}
+  .article-box p{font-size:15.5px;}/* 正文中的重点强调：加粗 + 轻微放大 + 深色 */
+/* 正文常规字重略微降低，让强调更突出 */
+.article-box p{
+  font-weight:500;
+}
+
+/* 重点强调：加粗 + 放大 + 主色 + 金色底纹 */
+.article-box p strong{
+  font-weight:900;
+  font-size:1.18em;
+  color:var(--navy);
+  letter-spacing:.8px;
+  padding:0 3px;
+  background:linear-gradient(transparent 62%, rgba(201,164,92,.32) 62%);
+}
+/* 缩小的说明文字（如括号内注释） */
+.article-box p span{
+  font-size:0.85em;
+  color:var(--muted);
+  font-weight:400;
+}
+  .tl-item{gap:14px;padding:22px 0;}
+  .tl-year{flex:0 0 64px;font-size:23px;padding-bottom:8px;}
+  .tl-month{font-size:13.5px;letter-spacing:1px;margin-top:8px;}
+  .stat-num{font-size:32px;}
+  .stat-num em{font-size:21px;}
+  .stat-label{font-size:13.5px;letter-spacing:3px;text-indent:3px;}
+  #toTop{right:18px;bottom:22px;width:44px;height:44px;}
+  footer .wrap{flex-direction:column;gap:6px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== 顶部导航 ==================== -->
+<header>
+  <div class="wrap navbar">
+    <div class="brand" onclick="go('home')">王雅茜<em>知识产权律师</em></div>
+    <button class="nav-toggle" id="navToggle" aria-label="打开菜单">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a data-route="home" onclick="go('home')">首页</a></li>
+      <li><a data-route="profile" onclick="go('profile')">个人<wbr>简介</a></li>
+      <li><a data-route="achievements" onclick="go('achievements')">代理<wbr>业绩</a></li>
+      <li><a data-route="practice" onclick="go('practice')">业务<wbr>领域</a></li>
+      <li><a data-route="cases" onclick="go('cases')">精选<wbr>案例</a></li>
+      <li><a data-route="notes" onclick="go('notes')">研究/<wbr>活动/<wbr>笔记</a></li>
+      <li><a data-route="contact" onclick="go('contact')">咨询预约/<wbr>联系方式</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="view"></main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer>
+  <div class="wrap">
+    <span>王雅茜 · 知识产权律师 | 上海如闻律师事务所</span>
+    <span>上海市黄浦区淮海中路8号13楼 | 15000742068 | 15000742068@163.com</span>
+  </div>
+</footer>
+
+<button id="toTop" title="回到顶部" aria-label="回到顶部">↑</button>
+
+<script>
+/* ==================================================================
+   SECTION: 站点基础数据
+   ================================================================== */
+window.SITE = {
+  profile: {
+    name: "王雅茜",
+    title: "知识产权律师",
+    phone: "15000742068",
+    email: "15000742068@163.com",
+    firm: "上海如闻律师事务所",
+    address: "上海市黄浦区淮海中路8号13楼",
+    intro: "自2020年进入法律服务行业，长期从事商标、专利、商业秘密、著作权及反不正当竞争等知识产权业务，处理企业知识产权相关非诉与诉讼争议，关注科技创新与技术商业化场景下的知识产权风险治理与争议解决；曾为科技、医疗器械、日化消费、文化传媒等领域企业提供知识产权法律服务，参与代理案件入选典型案例。",
+    image: "https://workspace-cdn.uzone.com/f49ee4872f08444097ca4b953dd39d6e%2Fo%2F1790914783463-c.jpg?auth_key=1793506783-0-0-94dd3f6c74e14ab88074fdd873c16235"
+  },
+
+  stats: [
+    { num: "100",  label: "代理案件" },
+    { num: "2000", label: "服务客户" },
+    { num: "20",   label: "专业研究" }
+  ],
+
+  achievementsBrief: [
+    "2020年入行，长期从事商标、专利、商业秘密、著作权及反不正当竞争等知识产权业务，擅长企业知识产权战略的制订与执行。",
+    "曾为科技、医疗器械、日化消费、文化传媒等领域企业提供知识产权法律服务，参与代理案件入选典型案例。",
+    "处理企业知识产权相关非诉与诉讼争议，关注科技创新与技术商业化场景下的知识产权风险治理与争议解决。"
+  ],
+
+    timeline: [
+    { year: "2025", month: "12月", text: "汕头市某滨科技有限公司&高某不正当竞争商业诋毁案件（代理原告）。被告在直播推广过程中，采取“踩一捧一”的对比宣传方式，捏造、散布虚假信息，对原告主营的产品进行负面诋毁，贬损原告商品声誉与商业信誉，案件进行中。本案厘清直播带货中对比宣传的合法边界，针对竞品刻意踩一捧一、虚假抹黑的不正当竞争商业诋毁行为，通过诉讼固定网络侵权证据，为经营者维护自身商业信誉提供维权参考。" },
+    { year: "2026", month: "4月", text: "深圳市某雅化妆品有限公司&溪某源生物科技集团有限公司不正当竞争包装装潢混淆纠纷（代理被告）。原告集团公司主张我方当事人生产、销售的产品包装装潢与其知名商品包装构成近似，经代理后，原告撤诉。本案系美妆行业知名品牌提起的包装装潢不正当竞争纠纷。案件处理过程中，通过对产品包装差异、混淆可能性等要点进行抗辩论证，促成原告撤诉，有效维护了被告的经营权益，为同类美妆包装仿冒纠纷的抗辩积累实务经验。" },
+    { year: "2026", month: "5月", text: "深圳某一科技有限公司&溪某源生物科技集团有限公司不正当竞争包装装潢混淆纠纷（代理被告）。原告集团公司主张我方当事人生产、销售的产品包装装潢与其知名商品包装构成近似，经代理后，原告撤诉。本案系美妆行业知名品牌提起的包装装潢不正当竞争纠纷。案件处理过程中，通过对产品包装差异、混淆可能性等要点进行抗辩论证，促成原告撤诉，有效维护了被告的经营权益，为同类美妆包装仿冒纠纷的抗辩积累实务经验。" },
+    { year: "2026", month: "9月", text: "山东某文医疗器械有限公司诉&山东某旭医疗设备有限公司专利侵权案件（代理原告）。原告系手术无影灯相关专利的专利权人，被告未经许可，擅自生产、销售落入原告专利保护范围，侵害原告专利权，案件进行中。本案属于同业竞争者之间的专利侵权纠纷，医疗器械产品技术门槛高、专利价值大，本案对同业抄袭医用设备的侵权行为进行规制，体现医疗器械领域知识产权保护对企业研发投入的价值保障作用。" }
+  ]
+};
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 精选案例文章
+   ================================================================== */
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push(
+  {
+    id: "case-1", cat: "cases", date: "2025-04-01",
+    title: "垄断案件中涉农村土地经营权的相关地域市场界定",
+    sub: "——（2025）最高法知民终263号",
+    paras: [
+      "近期，最高人民法院知识产权法庭在一起滥用市场支配地位纠纷上诉案件中明确，当涉案商品为农村土地经营权时，界定相关地域市场应以农村土地经营权的流转范围和生产经营特点为基础，综合考虑土地地理位置、耕种条件及耕种成本等因素，按照需求替代分析法判断哪些地域范围内的农村土地经营权存在较为紧密的替代关系，避免简单以单一行政村或村民小组的行政管理边界来界定相关地域市场。",
+      "本案基本案情如下：祝某为江西省乐平市洪某镇某村下辖的A村民小组村民，自2016年起将其以家庭承包方式承包的田地出租给胡某甲、胡某乙耕种，双方未签订书面合同。2023年3月22日，胡某甲与包括祝某在内等十余人签订《协议书》，约定A村民小组的农田租金标准及付款方式，但未约定租赁期限。2024年初，因既往租金争议，胡某甲、胡某乙告知祝某不再续租其承包田。祝某认为，胡某甲、胡某乙在某村下辖的A、B村民小组合计流转超过90%的土地，在A、B村民小组土地经营权流转市场中具有支配地位，两人无正当理由拒绝续租其承包田，导致涉案农田闲置、荒芜，构成拒绝交易之滥用市场支配地位行为。祝某遂向江西省景德镇市中级人民法院提起诉讼，请求确认胡某甲、胡某乙构成滥用市场支配地位行为，判令二人继续履行《协议书》约定的土地流转及租金支付义务，并在一定期限内改正闲置、荒芜涉案农田的行为。",
+      "一审法院认为：本案被诉垄断行为涉及的特定商品为农村土地经营权，相关商品市场应当界定为农村土地经营权流转市场，相关地域市场应当界定为江西省乐平市洪某镇，所涉市场的时间可界定为2024年。基于双方当事人意见和现有证据材料，胡某甲、胡某乙在洪某镇农村土地经营权流转市场中不具有支配地位。因此，其二人于2024年决定不再续租祝某享有承包权的涉案田地的行为不构成滥用市场支配地位。一审法院据此判决驳回祝某的全部诉讼请求。祝某不服一审判决，向最高人民法院提起上诉。",
+      "最高人民法院二审审理认为：首先，从需求替代的角度进行分析。在农村土地经营权流转市场中，鉴于土地具有天然的不可迁移性，一定地域范围内的土地受当地自然地貌、气候水文等自然因素的影响，耕作条件基本相同，故经营者出于耕作便利、降低成本、提升收益等因素考量，一般优先选择在空间邻近、耕作条件相当的村域范围内流转土地，而非仅局限于单一区域。结合二审查明的事实可知，洪某镇某村范围内的绝大部分耕地均统一用于种植稻谷（水稻），且辖区内各村民小组的稻谷补贴金额标准一致，这一事实从侧面印证了某村范围内各村民小组土地的耕作条件及耕种成本基本相同。如果按照祝某的主张，将A村民小组界定为本案相关地域市场，通过假定垄断者测试法可知，当A村民小组的土地经营权流转价格出现不合理上涨时，经营者可轻易转向与A村民小组毗邻、耕作条件相当的其他村民小组流转农村土地经营权。因此，本案相关地域市场如若仅限于A村民小组，则地域范围明显过于狭窄。",
+      "其次，从供给替代的角度进行分析。土地承包权的原始取得虽存在本村集体经济组织成员身份的限制，但对于土地经营权流转的受让方身份并未限定为只能是本村集体经济组织成员。故A村民小组的土地承包权虽仅限本村民小组集体成员享有，但A村民小组村民承包土地后，既可以自行经营，也可以在保留土地承包权的情况下向他人流转其承包地的土地经营权。祝某上诉主张胡某甲、胡某乙仅能从A村民小组村民处受让涉案土地经营权，进而主张本案相关地域市场应当界定为A村民小组，实为混淆了“土地承包权的人身属性”与“土地经营权的可流转性”两个概念，该项主张缺乏事实与法律依据，应不予采纳。",
+      "最后，祝某在本案起诉状中自称其承包田在2003年至2016年期间由洪某镇段某村农户孙某耕种，以及本案已查明胡某甲、胡某乙截至2024年年底已经同时受让洪某镇某村下辖的A、B、C三个村民小组的部分农村土地经营权的相关事实亦可印证同一乡镇范围内不同行政村或村民小组之间的土地经营权存在较高的替代可能性，相关经营者并不局限在本村或本村民小组范围内流转农村土地经营权，涉案农村土地经营权流转的市场竞争地域范围早已突破单一行政村或村民小组的行政管理边界。",
+      "基于上述分析，本案相关地域市场应当界定为江西省乐平市洪某镇。鉴于本案双方当事人均未提供洪某镇范围内的耕地面积数据，本案可依据2024年度洪某镇下辖的某村范围内的耕地相关数据合理推断胡某甲、胡某乙在被诉垄断行为发生时在相关市场中是否具有市场支配地位。经核算，在某村2024年度的农村土地经营权流转市场中，胡某甲、胡某乙所占市场份额为33.74%。胡某甲、胡某乙在2024年度的某村农村土地经营权流转市场所占的市场份额低于二分之一，故其二人在同一时期洪某镇农村土地经营权流转市场中所占的份额必然更未达到二分之一。",
+      "综上，二审认定胡某甲、胡某乙在2024年度的江西省乐平市洪某镇农村土地经营权流转市场中不具有市场支配地位，不存在祝某指控的滥用市场支配地位行为，判决驳回上诉，维持原判。二审判决中同时指出，本案双方因涉案土地流转而产生的合同履行、土地返还、恢复农田四至及租金结算等争议属于土地经营合同项下的民事权利义务关系，祝某可就上述属于土地经营合同项下的民事纠纷另循法律途径主张权利。",
+      "三农问题是关系国计民生的重大问题，本案二审判决立足农村土地经营权的商品特性与农业生产经营特点，厘清了“土地承包权的人身属性”和“土地经营权的可流转性”，明确了垄断案件中涉土地经营权的相关地域市场的认定规则，依法保障土地流转双方的合法权益，对引导农村土地经营权流转市场规范健康发展、推动农业适度规模经营具有积极意义。"
+    ],
+    source: "来源：最高人民法院知识产权法庭　撰稿人：欧宏伟 谢颖馨 | 编辑：宋鸽"
+  },
+  {
+    id: "case-2", cat: "cases", date: "2024-12-20",
+    title: "捆绑搭赠被诉侵权产品构成专利法意义上的销售",
+    sub: "——（2024）最高法知民终1286号",
+    paras: [
+      "近日，最高人民法院知识产权法庭对一起侵害发明专利权纠纷案作出终审判决，认定被诉侵权人在商品交易中赠与商品的行为构成专利法意义上的销售行为。",
+      "本案中，泰州天某公司系“一种缠丝机”的发明专利（以下简称涉案专利）的专利权人。2023年11月，安徽建某公司从江苏维某公司处采购了包括3台钢筋滚焊机在内的钢筋加工设备。其中，每台钢筋滚焊机搭配赠送一台缠丝机，双方在采购合同中并未对缠丝机单独列项计价。前述钢筋滚焊机、缠丝机均系江苏维某公司制造。泰州天某公司以被诉侵权缠丝机侵害涉案专利权为由提起诉讼，请求判令：1.江苏维某公司、安徽建某公司停止被诉侵权行为；2.江苏维某公司赔偿泰州天某公司经济损失及合理开支共计50万元。",
+      "一审法院判决：江苏维某公司立即停止制造、销售侵害涉案专利权的产品行为，并赔偿泰州天某公司经济损失及合理开支共计5万元。泰州天某公司以一审法院未调查收集证据、判决确定的赔偿金额过低，江苏维某公司以被诉侵权缠丝机属于赠品、没有产生利润等为由，分别提起上诉。",
+      "最高人民法院二审认为，虽然江苏维某公司主张被诉侵权缠丝机是“赠品”，未在合同中单独计价，但其给付赠品以安徽建某公司支付钢筋滚焊机的对价为前提，被诉侵权缠丝机有关获利实际已隐含于钢筋滚焊机的销售利润之中，江苏维某公司亦认可该产品“配套在钢筋滚焊机中计价销售”，故即使被诉侵权缠丝机属于销售钢筋滚焊机产品时的赠品，并不影响该行为亦属于销售行为，即构成专利法意义上的销售行为。二审法院在依申请调查收集证据的基础上，改判全额支持泰州天某公司的诉请判赔金额。",
+      "本案二审判决对被诉侵权人“以赠与之名行销售之实”的行为进行明法析理，将捆绑搭赠被诉侵权产品认定为销售行为，对于类似案件审理具有一定参考意义。"
+    ],
+    source: "来源：最高人民法院知识产权法庭　撰稿人：范米多 靳毅 | 编辑：赵雨波"
+  },
+  {
+    id: "case-3", cat: "cases", date: "2024-09-10",
+    title: "发明人报酬纠纷中的举证责任分配及数额确定",
+    sub: "——（2024）最高法知民终907号",
+    paras: [
+      "近期，最高人民法院知识产权法庭审结一起职务发明创造发明人、设计人奖励、报酬纠纷案，明确职务发明报酬的给付应当以发明创造实施后取得经济效益为前提。根据《中华人民共和国促进科技成果转化法》（以下简称促进科技成果转化法）第四十五条第一款的规定，“取得经济效益”的认定通常应当以年为单位判断单位在实施发明创造的相应年度是否具有营业利润，从单位实施涉案专利转化成功投产的当年开始起算，综合考虑营业利润情况确定三至五年的提取营业利润的期限。发明人通常应当举证证明职务发明创造已经实施转化以及营业利润等相关事实，但是综合考虑相关证据由发明人所在单位持有和控制、发明人提交证据存在客观困难且成本较高等因素，人民法院可以通过责令单位提交相关证据、举证妨碍等规则实现相关事实的查明。",
+      "本案基本案情如下：王某于2016年8月入职某公司，任职岗位为制剂工艺开发高级总监，2021年8月17日，王某从该公司离职。涉案专利申请日为2019年2月3日，授权公告日为2020年4月17日，专利权人为某公司，发明人为吴某、林某、裴某、王某、莫某、李某。实施涉案专利的产品于2019年11月获准上市。根据某公司提交的产品营收情况统计表记载，2019年营业利润亏损，2020年至2024年营业利润共计48018万元，截止2024年，营业利润整体为负数。",
+      "一审法院认为现有证据无法证明涉案产品本身的营业利润，故本案需要进行专项审计，王某对此负有举证责任，但其明确不同意预交审计费用，应承担举证不能的后果。一审法院判决驳回王某的诉讼请求。",
+      "二审审理中，最高人民法院责令某公司提交了涉案产品营收利润情况表，包括营收总额以及相应的营收明细。",
+      "最高人民法院经审理认为：第一，某公司提交的产品营收数据可以作为判断其是否应向王某支付报酬以及确定报酬数额的依据，本案尚无必要另行通过审计方式确定产品的营业利润。一审法院仅以王某不愿预付审计费用为由驳回王某的诉讼请求不当。",
+      "第二，某公司应当向王某支付职务发明创造发明人报酬。某公司自2020年开始到2024年每年均已实际取得营业利润，应当在实施转化成功投产后连续三至五年，每年从实施该项科技成果的营业利润中提取不低于百分之五的比例向发明人支付报酬。涉案产品整体仍处于亏损状态并非某公司拒绝支付报酬的理由。",
+      "第三，报酬数额应综合考虑涉案专利的贡献率和发明人的数量、技术贡献、实施转化的贡献等因素予以确定。1.关于涉案专利的贡献率。涉案专利系用于产品的制剂，总体上发挥的仍是辅助作用。涉案专利的成功转化还离不开相关生产工艺的配套和完善，负责专利转化的相关人员对此也会作出相应贡献。故综合考虑涉案专利转化实施中抗体与制剂、专利与非专利生产工艺、专利完成人与实施转化人员等的贡献，酌情确定涉案专利的贡献率为20%。2.关于发明人的份额。涉案专利共有六位发明人，在无证据证明六位发明人各自贡献大小的情况下，应推定每位发明人的贡献相同，报酬应当在六位发明人之间平均分配。3.关于计算报酬的期限和数额。涉案产品自2020年开始上市销售，故应自2020年开始计算报酬。综合考虑某公司的研发投入、涉案专利的剩余期限以及获利情况，确定某公司提取报酬的期限为五年，即自2020年开始至2024年，营业利润基数共计48018万元。4.关于报酬提取比例。在某公司对于职务发明报酬没有其他约定的情况下，根据促进科技成果转化法的规定，酌情按照营业利润的5%计算报酬数额。综合考虑上述因素，某公司应向王某一次性支付涉案专利职务发明创造发明人报酬80万元。",
+      "综上，最高人民法院判决撤销一审判决，改判某公司向王某支付职务发明创造发明人报酬80万元。",
+      "职务发明创造发明人、设计人报酬制度对于切实保护发明人合法权益，提高发明人从事创新的积极性具有重要意义。本案通过合理分配发明人与单位的举证责任，合理确定了报酬数额，较好平衡了维护发明人利益和相关企业健康可持续发展之间的利益，对类似纠纷和案件的处理提供了有益借鉴。"
+    ],
+    source: "来源：最高人民法院知识产权法庭　撰稿人：谢蓉 仝玉叶 | 编辑：赵雨波"
+  },
+  {
+    id: "case-4", cat: "cases", date: "2025-06-01",
+    title: "天然气供应企业要求用户提前申报用气计划并收取偏差结算款不构成滥用市场支配地位",
+    sub: "——（2025）最高法知民终950号",
+    paras: [
+      "近期，最高人民法院知识产权法庭审结了一起由下游工业用气企业针对上游天然气供应企业提起的滥用市场支配地位纠纷上诉案件。本案明确了天然气供应企业要求用气方提前申报用气计划并收取偏差结算款具有正当性，一般不构成反垄断法规制的滥用市场支配地位行为，对于厘清行业惯例与垄断行为的边界、规范公用事业领域市场竞争秩序具有积极意义。",
+      "本案基本案情如下：云南罗某生物科技有限公司（以下简称罗某公司）系云南省腾冲市一家从事生物医药原料提取的生产企业，腾冲某石油昆某燃气有限公司（以下简称腾冲昆某燃气公司）是当地唯一的管道天然气供应企业。2022年8月，双方签订《燃气供用气合同》（以下简称合同），约定罗某公司需按年度、季度、月度提前申报用气计划，并设置了偏差结算条款，即当罗某公司实际用气量低于申报计划量时，需按差额部分气量金额的30%支付偏差结算款；当腾冲昆某燃气公司实际供气量低于计划量时，同样需向罗某公司支付偏差结算款。合同履行期间，罗某公司多次出现申报计划用气量与实际用气量严重不符的情况，累计产生较大金额偏差结算款，双方因此发生纠纷并引发诉讼。此后，腾冲昆某燃气公司以罗某公司未支付偏差结算款等为由停止供气。",
+      "罗某公司遂向云南省昆明市中级人民法院提起诉讼，主张腾冲昆某燃气公司构成“附加不合理交易条件”“以不公平的高价销售商品”“拒绝交易”等滥用市场支配地位行为，请求判令腾冲昆某燃气公司恢复供气、赔偿损失并确认相关合同条款无效。一审法院经审理认定，腾冲昆某燃气公司不存在滥用市场支配地位行为，判决驳回罗某公司全部诉讼请求。罗某公司不服，提起上诉。",
+      "最高人民法院二审审理认为，第一，要求工业用气企业“提前申报用气计划”和执行“偏差结算机制”不构成附加不合理交易条件。首先，天然气作为具有公共利益属性的特殊商品，其购销和输送具有显著的物理排他性和容量限制，长输高压管网的精准调度要求下游工业用户提前申报用气计划。上游气源企业采购天然气适用“照付不议”条款系行业惯例，下游工业用气企业报送年度、季度、月度用气需求计划，是保障管网安全、稳定获取低价气源配额的刚性要求。其次，腾冲昆某燃气公司并非完全禁止下游企业用气计划的调整，在不突破年度总气量约束前提下，可根据企业申请向上游报批调整月度用气计划，还配套建立工业用户之间气量调剂机制，操作层面具备了一定的弹性。最后，罗某公司产生高额偏差款的根源系自身对用气量预估的失准，与供气企业定价机制并无直接因果关系。第二，上下游偏差结算收支差额不能认定为以不公平高价销售商品。城市燃气企业与上游气源企业签订的购气合同和与下游工业用户签订的供用气合同在计量周期、风险范围、计价标准上存在天然差异，两类合同中的偏差结算金额不完全相等实属正常现象。结合最近三年半的完整结算数据，腾冲昆某燃气公司向下游收取偏差款总额与向上游气源企业支付的成本仅存在极小差额，不存在系统性攫取垄断利润情形。第三，腾冲昆某燃气公司暂停供气具备正当理由，不构成拒绝交易。一方面，根据查明的事实，罗某公司未履行生效民事调解书确定的付款义务，拖欠腾冲昆某燃气公司的燃气费，且已被多家法院列为失信被执行人，腾冲昆某燃气公司有合理理由怀疑其履约能力。另一方面，罗某公司自2024年6月后未再向腾冲昆某燃气公司申报用气计划，导致腾冲昆某燃气公司无法将其需求纳入向上游申购计划内用气的配额中。",
+      "综上，最高人民法院认定腾冲昆某燃气公司不存在罗某公司诉称的上述三项被诉滥用市场支配地位行为，判决驳回上诉，维持原判。同时，最高人民法院在二审判决中明确指出，腾冲昆某燃气公司作为云南省腾冲市唯一一家负责提供天然气供应的经营企业，在确保当地供需总量平衡的目标下，如何更有成效地做好提前预测和精准规划，仍存在进一步改进的空间。腾冲昆某燃气公司应尽到公用事业经营者的企业职责，后续可进一步采取必要举措强化经营管理的规范化与透明度，尽可能让下游用户不因“偏差结算”机制增加经营成本。",
+      "本案二审判决明确了在判断具有市场支配地位的经营者所附加的交易条件是否构成“不合理交易条件”时，应结合商品特性和合理行业惯例进行综合分析，避免将符合行业特性和合理行业惯例的交易条件错误定性为违法垄断行为，造成“假阳性”错误。在此基础上，二审判决也对天然气公用事业单位后续如何进一步规范化经营给出明确、具体的指引，对规范公用企业经营行为边界、维护公平竞争市场秩序、营造法治化营商环境，具有一定指引意义。"
+    ],
+    source: "来源：最高人民法院知识产权法庭　撰稿人：欧宏伟 罗素云 | 编辑：赵雨波"
+  }
+);
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 业务领域文章
+   ================================================================== */
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push(
+  {
+    id: "practice-1", cat: "practice", date: "2026-06-01",
+    title: "中国企业知识产权竞争与产业风险白皮书-2026",
+    sub: "上海如闻律师事务所 知识产权争议解决团队",
+    paras: [
+      "上海如闻律师事务所知识产权争议解决团队，以市场主体构建壁垒，以裁判视角研判争议。",
+      "## PART 01 | 中国企业知识产权竞争进入“市场主权”时代",
+      "1. 从“拥有知识产权”到“掌握市场主权”。",
+      "2. 知识产权正在成为企业竞争壁垒。",
+      "3. 技术、品牌、数据与内容的价值重构。",
+      "4. 知识产权争议从权利保护走向市场竞争。",
+      "5. 企业需要从“事后维权”走向“全周期治理”。",
+      "## PART 02 | 科技企业：从技术创新到知识产权壁垒",
+      "### 2.1 技术创新与知识产权布局",
+      "核心技术识别、专利布局、商业秘密保护、技术成果权属、研发人员及核心员工风险。",
+      "### 2.2 技术商业化中的知识产权",
+      "技术开发、技术许可、技术转让、技术合作、科技成果转化、IP尽职调查。",
+      "### 2.3 科技企业竞争中的核心争议",
+      "专利侵权、专利无效、商业秘密侵权、技术合同争议、员工离职及技术流失、不正当竞争。",
+      "### 2.4 科技企业的跨境 IP 风险",
+      "跨境技术交易、海外专利与商标、技术许可、跨境研发合作、海外知识产权争议。",
+      "## PART 03 | 品牌企业：从品牌资产到市场竞争",
+      "### 3.1 品牌资产的知识产权基础",
+      "商标、著作权、商业秘密、品牌标识、包装装潢、商业 IP。",
+      "### 3.2 品牌竞争中的主要风险",
+      "商标抢注、仿冒混淆、品牌攀附、虚假宣传、商业诋毁、电商侵权。",
+      "### 3.3 IP 商业化",
+      "IP 授权、联名合作、IP 衍生开发、品牌跨界、内容商业化。",
+      "### 3.4 数字商业与跨境品牌保护",
+      "电商平台、跨境电商、平台治理、海外品牌保护、数字内容。",
+      "## PART 04 | 七大产业的知识产权争议图谱",
+      "### 01 | 科技智造",
+      "半导体/芯片、智能制造、高端装备、机器人。",
+      "### 02 | 新兴技术",
+      "新能源/新能源汽车、新材料、AI/大模型。",
+      "### 03 | 通信与信息技术",
+      "通信/5G/6G、航天/航空/卫星、互联网、软件/SaaS、网络安全、数据与信息技术。",
+      "### 04 | 生物医药与化工",
+      "生物医药/生物科技、化工。",
+      "### 05 | 消费品与品牌",
+      "食品、饮料、酒、烟草、个护美妆、家庭清洁、纸品、母婴、宠物消费品。",
+      "### 06 | 电商与数字商业",
+      "电商平台、跨境电商平台及卖家。",
+      "### 07 | 文化娱乐与IP",
+      "游戏、动漫、影视、潮玩/IP 衍生、文化创意、文学/数字内容、音乐、演艺/娱乐。",
+      "## PART 05 | 高频争议场景与裁判规则",
+      "### 5.1 专利争议",
+      "权利要求解释、等同原则、现有技术、专利无效、侵权判定。",
+      "### 5.2 商业秘密争议",
+      "秘密性、保密措施、侵权行为、举证责任、损害赔偿。",
+      "### 5.3 商标与品牌争议",
+      "混淆可能性、商标近似、恶意注册、攀附、驰名商标保护。",
+      "### 5.4 著作权与内容争议",
+      "独创性、权属、改编、信息网络传播、平台责任。",
+      "### 5.5 不正当竞争争议",
+      "混淆、虚假宣传、商业诋毁、数据竞争、竞争关系。",
+      "### 5.6 技术合同争议",
+      "技术成果归属、技术秘密、合同解除、许可范围、违约责任。",
+      "## PART 06 | 企业知识产权风险治理体系",
+      "从“发生争议后解决”，走向“争议发生前治理”。",
+      "### 01 | 识别",
+      "识别企业核心技术、品牌、数据及内容资产。",
+      "### 02 | 确权",
+      "明确权利归属及知识产权布局。",
+      "### 03 | 保护",
+      "制度、合同、权限、保密及证据体系。",
+      "### 04 | 交易",
+      "许可、转让、合作、投资及并购中的 IP 风险控制。",
+      "### 05 | 监测",
+      "竞争对手、市场及侵权风险监测。",
+      "### 06 | 争议解决",
+      "诉讼 | 仲裁 | 行政程序 | 刑民衔接。",
+      "### 07 | 价值实现",
+      "让知识产权进入企业经营与市场竞争。",
+      "## PART 07 | 知识产权从保护工具到经营资产",
+      "01 知识产权不是企业经营之外的法律问题。",
+      "02 技术、品牌与 IP 本身就是企业资产。",
+      "03 真正的 IP 保护，不止于取得权利。",
+      "04 真正的 IP 价值，不止于避免侵权。",
+      "05 知识产权最终要进入企业的研发、交易、竞争与资本体系。",
+      "## 结语",
+      "从保护权利，到构建壁垒；从解决纠纷，到参与竞争；从法律服务，到企业经营。",
+      "上海如闻律师事务所知识产权争议解决团队",
+      "以市场主权构建壁垒 | 以裁判视角研判争议。"
+    ],
+    source: "上海如闻律师事务所 知识产权争议解决团队"
+  },
+  {
+    id: "practice-2", cat: "practice", date: "2026-05-15",
+    title: "上海如闻律师事务所·知识产权产业服务版图",
+    sub: "以市场主权构建壁垒 | 以裁判视角研判争议",
+    paras: [
+      "上海如闻律师事务所·知识产权争议解决团队，以市场主权构建壁垒，以裁判视角研判争议。",
+      "## ·科技产业",
+      "聚焦科技创新与技术商业化，服务于专利、商业秘密、技术交易、IP 尽调、科技合规及争议解决。",
+      "## ·品牌、消费与文化产业",
+      "聚焦品牌保护与 IP 商业化，服务于商标、著作权、IP 授权及跨境业务。",
+      "## 一、前沿技术",
+      "AI/大模型/算力基础设施 | 新能源/新能源汽车/电力/氢核碳 | 新材料。",
+      "## 二、科技智造",
+      "半导体/芯片 | 智能制造 | 高端智造 | 机器人 | 航空火箭卫星 | 低空经济 | 海洋装备 | 制造/车辆/装备。",
+      "## 三、通信与信息技术",
+      "通信（5G/6G）| 通信设备 | 卫星通信与卫星互联网 | 量子信息科技 | 数据技术 | 软件 | 网络安全。",
+      "## 四、医疗、生物医药与化工",
+      "脑机接口 | 生物医药/生物科技 | 生物育种/农业生物制剂 | 化工。",
+      "## 五、品牌、消费品与数字商业",
+      "食品 | 饮料 | 酒 | 烟草 | 个护美妆 | 家庭清洁 | 纸品 | 母婴 | 宠物消费品 | 电商平台 | 跨境电商平台及卖家。",
+      "## 六、文化娱乐与 IP",
+      "游戏 | 动漫 | 影视 | 潮玩/IP 衍生 | 文化创意 | 文学/数字内容 | 音乐 | 演艺/娱乐。"
+    ],
+    source: "上海如闻律师事务所 知识产权争议解决团队"
+  }
+);
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 行业观察文章（新增 / 更新）
+   ================================================================== */
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push(
+    {
+    id: "observe-3", cat: "observe", date: "2026-09-10",
+    title: "在第十五届中国知识产权年会，看见更大的知识产权",
+    sub: "——2026年9月8日-9日 · 北京 · 参会手记",
+    paras: [
+      "9月8日、9日，我去了北京，参加第十五届中国知识产权年会。出发前，其实有几个很具体的小心愿。",
+      "!img images2/image1.jpg|",
+      "其中一个，是想去见一眼申长雨。他从2013年起担任国家知识产权局局长，十三年时间。",
+      "!img images2/image2.jpg|",
+      "9月8日、9日的年会上，申长雨以国家知识产权局局长的身份出席开幕式并致辞。当时我只是觉得，终于见到了这个在知识产权行业里反复出现了很多年的名字。后来才知道，我恰好见证了他以这个身份出席行业活动的最后一个时间节点。<span style=\"font-size:0.85em;color:#6f6879;\">（9月10日，陈福利任国家知识产权局党组书记；9月29日，国务院正式免去申长雨国家知识产权局局长职务。）</span>",
+      "!img images2/image3.jpg|",
+      "主论坛结束后，我去展位看了很多东西。政府、法院、企业、代理机构、律师；专利、商标、版权、地理标志、商业秘密；国内的、国外的。展位密密麻麻，人来人往，大家交换名片、互相认识、介绍业务、讨论案件、探讨合作。在这个大型行业会议里待了两天以后，我越来越觉得：知识产权这个行业，远比“律师”两个字大得多。甚至律师，只是这个巨大生态里很小的一部分。让我印象很深的一件事，是知识产权服务已经细分到了令人惊讶的程度。很多事情，根本不是一个律师单打独斗能够完成的。技术、专利、商标、版权、海外布局、代理、诉讼、商业化、企业管理……",
+      "一个成熟的知识产权产业，本质上是在围绕企业的创新活动，长出越来越细密的专业分工。这件事情对我触动很大。因为我以前很容易把自己理解成：我是一个律师，一个专业技术人员。但站在这个行业现场，我突然觉得，也许这个身份还远远不够。企业真正需要的，从来不只是一个会讲法律的人。而是当企业遇到一个具体问题的时候，有一个人能够走到它身边，听懂它在做什么，知道它真正害怕什么，然后想办法把问题解决掉。",
+      "第二天下午，我没有继续到处逛，坐下来听了汇仲专场《核心技术保护与人才合理流动：科技企业商业秘密治理与争议攻防》专题分论坛。听邰江丽讲《大模型商业秘密保护的法律挑战与应对》。",
+      "!img images2/image4.jpg|",
+      "听张好律师讲《从争议现场到证据工程：商业秘密案件的攻防要点与败诉风险防范》。也听苏志甫律师讲《商业秘密保护如何走向创新资产治理——从裁判实践到体系升级》。",
+      "!img images2/image5.jpg|",
+      "!img images2/image6.jpg|",
+      "事情突然变得有意思了。我发现，自己最后记住的，并不是某一个法律知识点。",
+      "而是一个律师身后的<strong>“大量案件”</strong>",
+      "一个律师的专业能力，不止是：法律知识很扎实、逻辑很好、表达很好、对抗强、庭审经验丰富。",
+      "亦是：真正做过什么案件，真正站在什么样的争议里面，真正面对过什么样的客户，真正见过什么样的对手，真正在哪些案件里输过、赢过、挣扎过、判断过、研究过，这些东西，才会一点一点形成一个律师自己的风格和气质。",
+      "这种触动，比“北京知识产权业务很强”更大。北京有它非常特殊的知识产权土壤。国家知识产权局以及相关审查、司法、研究和行业资源长期汇聚于此，形成了非常密集的知识产权专业生态。但上海也有自己的位置。它离产业、资本和商业市场很近，很多技术最终都要在这里进入产品、进入市场、进入交易。",
+      "!img images2/image7.jpg|",
+      "后来我还遇到了三位越南律师。她们当时找不到晚宴的地址，因为问路，我们就这样聊了起来。不同的国家、不同的语言、不同的执业环境，但聊起工作来，同行之间的熟悉感，很快就让人觉得亲切。",
+      "<strong>一门外语真正带来的，可能不只是多一种表达方式，而是一个人的理解能力向外延伸。</strong>",
+      "!img images2/image8.jpg|",
+      "两天下来，其实还有很多很多东西没有写。但我慢慢看见了一个更大的东西：知识产权不是律师自己的小专业。它本来就长在企业、技术、人才、资本、市场和国际竞争里面。而律师如果一直把自己关在“法律服务”这个小房间里，很容易越来越专业，却离企业越来越远。",
+      "这次北京之行，也让我重新思考了自己。我不是最擅长把每一项理工科技术都解释得特别漂亮的人，至少现在还不是。",
+      "但我越来越确定一件事：",
+      "<strong>“离案例最近的地方，是企业家身边”</strong>",
+      "去看企业家到底在做什么。看一家科技公司为什么值钱。看一个技术为什么重要。看一个产品怎么赚钱。看一个核心员工为什么重要。看企业为什么会发生争议。只有真正走进去，问题发生的时候，我才有可能参与进去。而不是只在事情发生以后，坐在办公室里告诉他：“根据法律规定……”",
+      "我越来越觉得，一个律师真正的专业能力，不只是懂法律。而是你有没有进入别人的世界。看懂他的业务。听懂他的语言。理解他的焦虑。然后把自己的专业，真正变成他的解决方案。",
+      "!img images2/image9.jpg|",
+      "最后真正带回上海的，是一个越来越清晰的念头：律师的生命力在于：",
+      "<strong>“办理过大量真实的案件”</strong>",
+      "这也是为什么，我越来越想了解科技企业。不是因为“AI”“半导体”“商业秘密”这些词听起来很新。而是因为这些地方正在产生大量真实、复杂而新颖的问题。",
+      "而问题，才是律师真正生长的地方。这可能才是我想要的职业生命力。",
+      "!img images2/image10.jpg|文尾，分享一枚小小的年会纪念徽章"
+    ],
+    source: "第十五届中国知识产权年会 · 参会手记"
+  }
+);
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 笔记文章（新增 / 更新）
+   ================================================================== */
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push(
+
+);
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 专业研究一《知识产权刑事保护原则之探析》
+   ================================================================== */
+window.RESEARCH1_PARAS_A = [
+  "许常海：中国政法大学民商经济法学院博士研究生",
+  "## 内容提要",
+  "《最高人民法院、最高人民检察院关于办理侵犯知识产权刑事案件适用法律若干问题的解释》的发布实施，是落实严格知识产权保护政策及立法精神的重要举措。但目前对知识产权刑事保护原则研究不足，理论观点迥异，实践缺乏理论指引，影响司法解释有效实施。知识产权刑事保护原则的确立应当以理论和实践中存在的问题、知识产权刑事保护特点及功能为立足点，以司法解释规则为研究切入点，全面分析规则以提炼原则。知识产权刑事保护应当坚持遵循知识产权权利属性、坚守权利法定与罪刑法定双重法定、维护法秩序统一性、严格保护与刑法谦抑有机融合四项原则。",
+  "## 关 键 词",
+  "知识产权刑事保护　知识产权刑事司法解释　保护原则　权利属性",
+  "## 引 言",
+  "知识产权刑事保护，主要是指通过刑事诉讼程序对纳入刑法明确规定的侵犯知识产权行为予以刑罚制裁，以保护知识产权权利人合法权利及维护市场经济秩序，是知识产权保护体系中最有强制性和最终保障性的保护方式。2025年4月26日起施行的《最高人民法院、最高人民检察院关于办理侵犯知识产权刑事案件适用法律若干问题的解释》（法释〔2025〕5号，以下简称《解释》）是针对侵犯知识产权犯罪的一次全新系统性解释，吸纳并废止了前三部知识产权刑事司法解释。《解释》的出台是我国知识产权刑事司法迈向精细化、科学化的里程碑，既强化对科技创新成果保护力度，又对刑法过度介入私权领域予以节制，实现两者之间的动态平衡，标志着我国知识产权刑事司法保护体系在法治化发展道路上迈入一个新阶段。",
+  "近两年来，知识产权刑事案件数量呈现快速增长趋势，2023年、2024年全国法院新收知识产权刑事一审案件数量分别达到7335件、9120件，较上一年增长37.46%、24.34%。新类型案件不断涌现，法律适用更为疑难复杂，社会各界对知识产权刑事保护有更高需求，《解释》的发布实施，在法律规则方面能够有效应对知识产权刑事保护面临的新问题新挑战。然而，对知识产权刑事保护原则的系统宏观考察基本处于空白，司法实践缺少基础性理论的支撑和指引，主要原因在于知识产权刑事保护处于知识产权民法学与刑法学交叉地带。一方面，知识产权具有不同于其他财产权的权利属性，知识产权案件相较于普通民商事案件及刑事案件，展现出其独特的特点。知识产权相关规则随着技术发展而不断调整变化，知识产权刑事案件在全部刑事案件中占比较小，刑法学者对知识产权领域的理论研究尚不够深入。另一方面，研究知识产权刑事保护原则不能脱离刑事基本理念，而知识产权法学属于民事法学范畴，刑事与民事理念、原则、规则等存在诸多不同。刑事保护在知识产权保护体系中持续处于较为边缘的位置，知识产权学者亦忽略对知识产权刑事保护原则的研究。法律原则贯穿于法律规则之中，更能够直接反映法律本质以及法律适用的规律性。知识产权刑事保护原则的缺失，在一定程度上阻碍了《解释》的有效实施。鉴于法律规则是研究提炼法律原则的基础，本文尝试以《解释》主要条款为研究切入点，立足知识产权刑事保护存在的问题及特点，归纳知识产权刑事保护应当坚持的原则，实现《解释》规则与刑事保护原则有机融合，以原则促进规则的理解与适用，推动《解释》和严格知识产权保护政策和立法精神得以准确实施。",
+  "## 一、知识产权刑事保护理论和实践存在的问题",
+  "知识产权刑事保护原则研究之不足，基础性问题的理论观点针锋相对，理论指引实践的有效性和针对性弱，导致司法实践缺少理论支撑，部分知识产权刑事案件的审判思路并不完全符合知识产权权利属性，法律适用把握不精准，此问题是研究知识产权刑事保护原则的立足点。",
+  "### （一）基础性理论研究方面的不足",
+  "从1997年《刑法》系统性规定侵犯知识产权犯罪以来，不乏对知识产权刑事保护的研究成果，主要体现在知识产权犯罪性质、知识产权刑事政策、刑民交叉等刑事程序以及各罪罪状的法律界定等具体问题，但是对知识产权刑事保护系统性、整体性研究尚不够全面，缺乏对知识产权保护原则体系化的研究成果。关于知识产权刑事保护原则或者理念的研究，曾有观点认为，知识产权刑事保护原则包括刑事干预的必要性原则、效益性原则、前瞻性原则、同步性原则。还有观点认为，知识产权刑事保护坚持逐步增强保护的理念、多种保护结合的理念、体现公平正义的理念。有学者从知识产权刑事保护的某一部分提炼出法律原则。比如有观点认为，在数字出版的刑法保护中要坚持刑法谦抑与有限保护原则、罪刑法定与协调保护原则、宽严相济与司法均衡原则。上述归纳出的原则或者理念并没有完全体现知识产权属性及知识产权案件特点，针对性、指导性较弱。刑法保护干预的必要性、谦抑和有效保护原则更加侧重对知识产权刑事保护定位的研究，而效益性、前瞻性以及公平正义等可适用于所有的刑事案件，多种保护结合原则属于知识产权大保护范畴。由于对知识产权刑事保护原则等系统性研究不够全面深入，一些基础性研究出现针锋相对的观点。",
+  "### 1. 关于刑事保护附属性与独立性之争",
+  "知识产权部门法与刑法的关系是知识产权刑事保护研究的基本层面问题，但至今未能形成一致观点，主要有刑事保护附属性和独立性两种观点。刑事保护附属性观点认为，刑法相对于知识产权部门法而言具有附属性，如果著作权法不明确规定复制权、信息网络传播权等民事权利，刑事保护失去保护的基础，对与著作权有关的刑事犯罪的认定应遵从著作权法对相关术语的界定。著作权法、商标法等知识产权部门法是赋权法，对著作权、商标权的刑法保护必须以知识产权部门法相关规定为前提。刑法保护独立性观点认为，刑事法律可以与知识产权部门法规定不一致，例如侵犯著作权罪，刑法可以复制发行之名保护著作权所有专有权利，刑法中“通过信息网络向公众传播”的解释不应受著作权法中信息网络传播权定义的限制。对知识产权部门法与刑法关系的不同理解，涉及知识产权刑事保护与民事侵权的界限。如果不将该问题梳理清楚，可能导致实践中将不构成民事侵权或者仅仅是民事侵权的情形作为刑事犯罪处理。",
+  "### 2. 关于知识产权刑事保护谦抑与扩张之争",
+  "刑事干预知识产权纠纷的必要性与整个社会经济发展及法律文化程度应当保持一致。在当前严格知识产权保护背景下，作为最能体现严格保护理念的刑事保护是谦抑还是扩张，学界对此存在争议。主张谦抑性的观点认为，刑事立法和司法要考虑知识产权私权的性质，对刑事程序的运用要坚持谦抑原则，知识产权刑法保护必须以有关知识产权领域已存在的民事法、经济法、行政法律不足以规制某种严重的侵权行为为前提。主张扩张性的观点认为，应当扩大知识产权的刑事保护范围，企业字号、近似商标以及专利权侵权行为应当纳入刑法规制范围，应将反向假冒等其他商标侵权行为纳入刑事打击范围。不同的观点直接影响知识产权刑事立法和司法对侵犯知识产权犯罪边界的认定，以及对被告人的定罪量刑。",
+  "### 3. 关于知识产权刑事保护法益之争",
+  "法益是犯罪构成的基础要件和区分具体犯罪类型的基本标准，法益的明确界定，是判断某个行为是否构成犯罪或构成何种犯罪的关键所在。现有研究对知识产权刑事保护的法益存在较大分歧。主张秩序说的观点认为，刑法没有将侵犯知识产权犯罪作为侵犯财产类犯罪来对待，而是将其作为破坏社会主义市场经济秩序犯罪的一种，秩序法益应当是该罪保护的法益，至少应当是主要法益。还有观点认为，侵犯知识产权犯罪所侵害的法益，仅限于国家对知识产权的管理秩序，而非知识产权权利本身。主张权利说的观点认为，侵犯知识产权犯罪只能是对个人法益的犯罪，如果使用他人注册商标的行为，得到了注册商标所有人的许可，就不可能成立假冒注册商标罪。法益的界定，直接决定了某一行为是否构成侵犯知识产权犯罪，而对侵犯知识产权犯罪所侵害法益的不同理解，则进一步影响对行为的定性与处理。",
+  "上述争议涉及知识产权刑事保护的基础性问题，反映出当前对知识产权刑事保护基础性理论研究尚不充分。主张刑事保护具有独立性、应当扩张等观点立足刑事思维方式，认识到了侵犯知识产权犯罪带来的社会危害性，却未能充分重视知识产权是私权的权利属性。主张刑事保护附属性、应当谦抑等观点立足知识产权民事思维方式，虽然注意到了知识产权的私权属性，而忽视了侵犯知识产权犯罪对市场经济秩序带来的危害。知识产权刑事保护原则是基础性理论研究的重要内容，应当立足当前理论研究现状及存在的问题，融合刑法学和知识产权法学理论和思维方式，结合刑事和知识产权法律规则，客观分析不同观点的合理性与不足。上述存在争议的知识产权刑事保护基础性问题，是研究知识产权刑事保护原则的重要内容。",
+  "### （二）司法实践中存在的问题",
+  "一项法律原则的确立，需要以实践中存在的问题为导向，通过对问题的梳理分析，总结出原因并“对症下药”。以解决问题的方式抽象出的法律原则，能够有效指引实践。经梳理分析知识产权刑事案件发现，存在一些值得商榷之处。这些问题既是《解释》制定过程中需重点解决的问题，也是研究知识产权刑事保护原则的重要着力点。",
+  "### 1. 忽视对知识产权权利属性的审查",
+  "与民事案件侧重审查权利基础和法律关系不同，刑事案件审判一般侧重对影响定罪量刑的实行行为等案件事实和证据的审查。知识产权刑事案件审判容易忽视对知识产权权利属性及其权属的审查。经梳理分析近几年知识产权刑事案件裁判文书发现，有的刑事裁判文书在事实认定部分首先阐述知识产权权利状态和权属，这是符合知识产权案件办理规律的。例如在王某某等假冒注册商标罪案中，法院认定的事实开篇表述为“‘影驰’系影驰科技有限公司注册商标，商标注册证为第3601240号，核定使用商品（第9类）包括显卡、显卡驱动程序等，有效期为2005年1月21日至2025年1月20日……被告人王某某等未经上述注册商标权利人授权……”而有的刑事判决认定的事实开篇表述为“被告人某某假冒产品并进行销售”，未表述被侵犯的知识产权权利状态及其权属。特别是在有的销售假冒注册商标的商品罪案件中，刑事判决认定的事实侧重于行为人从何处购进假冒注册商标的商品及如何销售、销售金额多少，忽视了对注册商标权效力及其权属、未经注册商标权利人许可事实的认定。裁判文书是案件审理思路和法律适用的集中体现，对裁判文书的梳理分析能够客观反映司法实践现状。忽视对知识产权权属及权利有效性的审查，可能导致知识产权刑事保护被错误地应用于非合法有效的知识产权，或将民事不予保护的权利纳入刑事范畴。",
+  "### 2. 刑事案件与知识产权部门法之间的衔接不够顺畅",
+  "侵犯知识产权犯罪社会危害性在客观方面的表现，就是犯罪行为危害了一项合法有效的知识产权权利。因此，不能脱离一项具体的合法有效的知识产权去评价侵犯知识产权犯罪的意图、动机、目的以及手段、情节、后果。而评判一项具体的知识产权，需要运用知识产权部门法的相关规定。脱离知识产权部门法的规定评判具体的知识产权刑事案件，一定程度上可能影响案件审判质量，出现偏差。例如谢某某等假冒注册商标罪案。该案历经一审认定有罪、二审发回重审、一审又认定有罪、二审改判无罪。该案案件事实为，谢某某等人使用权利人喷码机的二手主板，生产被诉喷码机的外壳（贴附有权利人的注册商标），组装成新的喷码机销售，注册商标核定使用商品为“喷墨打印器具；喷墨绘图装置；激光打印机、喷墨打印机”，而不包括侵权产品喷码机，“喷码机”亦非《类似商品和服务区分表》中所列商品名称。权利人注册商标核定使用的商品名称与侵权产品名称不同，此时应当站在相关公众的视角，从商品功能、用途、主要原料、消费对象、销售渠道等因素进行综合分析。一审判决认为，被告人生产的喷码机在外形上与权利人生产的基本一致，在功能和用途上完全一致，进而认定被告人生产、销售的涉案喷码机与注册商标核定使用的商品属于“同一种商品”。二审判决认为，注册商标核定使用的商品与“喷码机”的功能、用途、销售渠道、消费对象等不相同，不属于假冒注册商标罪的“相同商品”，改判被告人无罪。一审判决不当之处，主要在于脱离了商标法的有关规定去评判刑事案件中的行为性质。《商标法》第56条规定：“注册商标的专用权，以核准注册的商标和核定使用的商品为限。”一审判决将被告人实际生产、销售的商品与权利人实际生产、销售的商品之间进行比较，而没有与注册商标核定使用的商品比较，未能准确理解知识产权权利法定原则，导致审判结果与知识产权部门法的规定和精神脱节。《解释》坚持问题导向，第1条第2款对此问题作出明确规定，即“同一种商品、服务”，应当在权利人注册商标核定使用的商品、服务和侵权人生产销售的商品、提供的服务之间进行比较。",
+  "### 3. 未准确理解知识产权民刑交叉案件的内在逻辑",
+  "知识产权民刑交叉案件涉及的实体及程序问题一直是各界重点关注的热点问题。实体上，涉及同一行为引起的在先案件判决认定的事实和证据对在后案件的影响。实践中，有意见认为，可以依据在先民事案件认定的损失数额作为在后刑事案件的犯罪数额。民事案件、刑事案件在事实认定和证明标准方面存在客观差异性，刑事案件对事实认定的证明标准远高于民事案件，民事案件认定的事实不能成为刑事案件认定事实的依据。程序上，涉及同一行为引起的民事诉讼、刑事诉讼如何协调处理，实践中存在较大争议。例如在宁波某星公司与宁波某沃公司技术秘密许可使用合同纠纷案中，某星公司提出某沃公司违反协议约定，利用某星公司要求保密的技术图纸生产设备，侵害其商业秘密。一审审理期间，公安机关针对某沃公司涉嫌侵犯商业秘密罪立案侦查，并函告一审法院。一审法院认为，公安机关侦查的事实涵盖了涉案协议和图纸相关内容，与其审理的侵害商业秘密民事案件事实具有重合之处，裁定驳回起诉，将案件移送公安机关处理。二审法院认为，因违反保密义务引发的商业秘密许可合同纠纷案件与关联刑事案件并非基于同一法律要件事实所产生的法律关系，人民法院可以在移送犯罪嫌疑线索的同时，继续审理该商业秘密许可合同纠纷案件，纠正一审裁定。对知识产权民刑交叉案件实体及诉讼方面的不同认识，说明实践中尚未能全面把握民刑交叉案件产生的原因及内在逻辑。",
+  "知识产权刑事案件实践中存在的问题，有实体方面的，也有程序方面的，造成这些问题的主要原因在于未能准确理解商标权、著作权和商业秘密等知识产权的权利属性，同时缺乏对知识产权刑事保护与民事保护间关系的系统性考量，且缺乏有效的知识产权刑事保护原则指引。",
+  "综上，知识产权理论研究方面存在的争议，影响着司法实践对法律规则的准确适用，司法案件中存在的问题可能导致理论研究获取到不精准的素材，这反映出知识产权刑事保护原则有效指引的缺失。研究知识产权刑事保护原则，需要树立系统性思维，将知识产权理论与刑事理论有机融合；需要全面把握知识产权民事、刑事案件审判的司法实践，确保确立的知识产权刑事保护原则能够符合知识产权权利属性和知识产权案件特点。"
+];
+
+window.RESEARCH1_PARAS_B = [
+  "## 二、知识产权刑事保护的特点及功能",
+  "归纳一类法律规则的法律原则，需要全面掌握适用此类法律规则的案件的基本特点，否则归纳的基本原则可能存在偏颇。因此，知识产权刑事保护的特点亦是研究知识产权刑事保护原则的重要立足点。同时，知识产权刑事保护原则旨在确保刑事保护功能的充分发挥，这也是研究和确立刑事保护原则的根本目的所在。",
+  "### （一）知识产权刑事保护重在维护市场经济秩序",
+  "虽然知识产权具有私权属性，但知识产权制度的设计需要考虑公共利益和公平竞争市场经济秩序。在知识产权制度设计中，知识产权保护制度处于重要环节，刑事保护则是最后手段，其重在通过对知识产权权利的保护而维护公平竞争的市场经济秩序。《解释》的制定，旨在“依法惩治侵犯知识产权犯罪，维护社会主义市场经济秩序”。知识产权刑事保护维护市场经济秩序的功能是知识产权民事保护、行政保护所不能及的。",
+  "### 1. 侵犯知识产权犯罪属于破坏市场经济秩序罪的范畴",
+  "知识产权随着以市场竞争为前提条件的近代社会的形成而产生和发展。知识产权与市场竞争相伴而生，商标权、著作权、专利权及商业秘密保护无不体现这一特点，保护知识产权本身就意味着制止不正当竞争行为。假冒注册商标行为就是非法侵占注册商标权利人商品的市场份额，侵犯商业秘密更是损害权利人的市场竞争优势。虽然知识产权民事、刑事保护的对象都是一项合法有效的知识产权，但民事保护重在明晰司法保护规则和定分止争，刑事保护重在通过保护知识产权权利人合法权利以维护公平竞争的市场经济秩序。刑事保护是打击性质恶劣的知识产权侵权行为、维护公平竞争市场经济秩序的有力工具。正是因为知识产权保护与维护市场经济秩序存在内在联系，知识产权刑事保护通过惩治严重的侵犯注册商标权、著作权、商业秘密等行为以维护公平竞争市场经济秩序，刑法据此将侵犯知识产权犯罪纳入破坏社会主义市场经济秩序罪中，而非侵犯财产罪一章。当然，这并不意味着侵犯知识产权犯罪侵害的法益是国家对知识产权的管理秩序或者市场经济秩序。",
+  "### 2. 刑事保护惩治社会危害性大的侵权行为",
+  "根据刑法规定，商标刑事保护规制“在同一种商品、服务上使用相同商标”的“双相同”侵权行为；著作权刑事保护规制的是通过“复制发行、通过信息网络向公众传播”侵害著作权的行为；侵犯商业秘密罪须达到“情节严重”程度，专利犯罪仅处罚“假冒他人专利”行为，主要理由在于上述行为的社会危害性更大，除对知识产权权利人造成损害外，还危害到不特定消费者合法权益、社会公共利益等。在李某某等假冒注册商标罪案中，李某某等未经注册商标权利人许可，假冒“阿迪达斯”“耐克”“斐乐”“彪马”等注册商标。此类案件中，行为人假冒多个权利人的注册商标，单个权利人难以通过民事诉讼程序及时彻底制止所有侵权行为，只有通过刑事保护，追究行为人的刑事责任，才能起到惩罚、预防和矫正功能。",
+  "### （二）刑事保护保障民事、行政保护功能的发挥",
+  "在知识产权强国建设推进过程中，“健全统一领导、衔接顺畅、快速高效的协同保护格局”是构建知识产权保护格局的重要目标，要健全知识产权行政保护与司法保护衔接机制，形成保护合力。在知识产权协同保护的大格局下，知识产权司法因其具备的国家强制性、权威性和确定性，而处于主导地位，成为最关键的知识产权保护手段。就知识产权司法保护而言，我国已探索出一条融合创新、自主发展的“中国道路”，建立起了以民事审判为基础，行政审判和刑事审判并行发展的知识产权司法保护体制机制。知识产权刑事保护凭借其独特优势，在知识产权司法保护、整体协同保护体系中扮演着至关重要的角色，为民事与行政保护提供了坚实的后盾。",
+  "### 1. 刑事保护是协同保护机制的有力保障",
+  "知识产权刑事保护是知识产权保护体系中最具有威慑力的方式，如果缺失知识产权犯罪刑罚的终极性威慑，知识产权行政保护和民事司法保护的功能将无法充分发挥，保护效果将大打折扣。尤其针对长期、多次侵犯知识产权的行为，民事赔偿与行政处罚已经难以有效遏制，此时知识产权刑法保护的作用愈发凸显。如果刑法没有规定侵犯知识产权犯罪，各知识产权部门法及行政法律规范等可能无法得到全面贯彻实施，市场主体规范管理、行业组织自律自治、社会公众诚信守法格局的形成亦离不开刑事保护的保障。知识产权刑事案件的意义不在于案件数量的多少，也不在于是不是对被告人判处了重刑，刑罚的存在本身即构成强大的震慑。",
+  "### 2. 刑事保护为民事侵权救济提供支撑",
+  "在全球化、网络化时代，侵犯知识产权犯罪趋势发生了较大变化，在侵权类型、行为方式、犯罪结构、组织形式等方面都有新的态势，呈现智能化、虚拟化、跨境化、集团化等特征，侵权行为更加隐蔽、有组织链条式增多。在严重的知识产权侵权行为面前，知识产权权利人以个人之力取证并通过民事诉讼程序维护合法权益的难度可能加大，知识产权刑事保护的作用更为凸显。不少案件中，权利人在通过刑事案件追究侵权人刑事责任之后，提起民事诉讼要求赔偿损失，这也彰显了知识产权刑事保护在通过惩治犯罪保障权利人合法权利的同时，还为权利人通过民事诉讼救济提供有力支撑。例如，由于技术秘密侵权行为的隐秘性较强，民事案件的证据难以获取，对不正当手段的认定可以参照在先刑事案件认定的事实。在广州某公司与华某、安徽某公司侵害技术秘密纠纷案中，在先刑事判决认定华某等存在非法披露行为，安徽某公司明知华某非法披露仍使用商业秘密，构成共同侵权；在后民事案件将在先刑事判决认定的事实作为相关依据，认定了华某等被诉侵权人的侵权行为。",
+  "### （三）知识产权刑事保护独特的国际影响力",
+  "知识产权不仅是国内发展的战略性资源，同时是国际贸易的“标配”和国际竞争的核心要素，具有天然的国际性、全球性。知识产权刑事保护的力度和广度鲜活地体现了国家对知识产权保护水平的高低以及对创新创造的重视程度。",
+  "### 1. 鲜明彰显我国知识产权严格平等保护理念",
+  "及时对侵犯知识产权犯罪适用刑罚，彰显了国家保护知识产权和打击侵犯知识产权犯罪的担当和作为。我国已加入《保护工业产权巴黎公约》《保护文学和艺术作品伯尔尼公约》等国际知识产权保护公约，这些公约均涉及知识产权刑事保护，表明我国正紧跟国际趋势，不断完善知识产权刑事保护体系。例如，在一起侵犯乐高拼搭玩具著作权刑事案中，法院基于被告人侵权时间长、涉案金额巨大等情节，依法判处被告单位罚金6亿元，判处主犯陈树某、陈坤某有期徒刑9年和8年，并处罚金2000万元和1500万元，充分彰显了刑事保护在加强知识产权严格保护方面的鲜明态度，有效优化了国际化营商环境。",
+  "### 2. 多种刑事诉讼方式平等保护中外权利人合法利益",
+  "知识产权刑事保护包括公诉与自诉两种方式，部分法院还通过受理刑事附带民事诉讼，运用多种诉讼程序全面保障权利人的合法权益，这是民事司法保护和行政保护所无法比拟的。例如，在张某、芜湖市某电气公司销售假冒注册商标的商品案中，自诉人ABB公司是一家根据瑞士法律成立的公司，以张某、芜湖市某电气公司涉嫌构成销售假冒注册商标的商品罪向人民法院提起刑事自诉。法院经审理认为，张某、芜湖市某电气公司明知是假冒注册商标的商品仍予以销售，侵犯了ABB公司合法的注册商标专用权，构成销售假冒注册商标的商品罪。",
+  "在当前严格保护知识产权、构建大保护格局的政策下，刑事保护不仅是严格保护最直接的体现，也是确保知识产权民事与行政保护有效实施的重要保障，旨在维护公平竞争的市场经济秩序。这必然要求研究知识产权刑事保护原则必须遵循知识产权刑事案件的特点，并将刑事保护放置在整个知识产权保护链条中予以考虑，合理界定刑事保护与民事保护的关系等。",
+  "## 三、知识产权刑事保护原则的确立",
+  "当前知识产权刑事保护理论研究和司法实践出现的问题以及刑事保护的特点和功能，是研究知识产权刑事保护的立足点，问题导向和目标导向缺一不可。另外，一项法律原则的确立离不开所属法律领域的具体法律规则，具体法律规则是提炼原则的基础，《解释》则是深入探究知识产权刑事保护原则的最佳切入点。",
+  "### （一）遵循知识产权权利属性原则",
+  "《知识产权强国建设纲要（2021—2035年）》明确提出“研究建立健全符合知识产权案件规律的特别程序法律制度”。建立符合知识产权案件规律的诉讼规范，就是要求知识产权法律规范要符合商标法、著作权法等各类知识产权属性及案件特点。知识产权刑事保护原则，首先应当符合知识产权属性和案件特点。",
+  "### 1. 遵循知识产权基本属性",
+  "知识产权刑法保护规制的是刑法明文规定的严重侵害合法有效知识产权的侵权行为。刑事犯罪的前提必然是民事侵权，刑事和民事保护的客体均是知识产权权利本身，只不过刑法将侵权行为严重的类型纳入刑事规制范畴。侵犯知识产权犯罪侵害的法益应当是一项合法有效的知识产权，“无权利则无危害”。前述认为知识产权刑事保护的法益是国家对知识产权的管理秩序或者市场经济秩序的观点，混淆了犯罪的法益与刑法规范保护的目的或者行为危害的对象。知识产权类型及有效性是区分侵犯知识产权此罪与彼罪、罪与非罪的标准。一项权利基础不稳定或者存在瑕疵的知识产权，随时可能被宣告无效或者撤销，不宜作为刑法保护的权利。《解释》规定的“非法经营数额”“违法所得数额”“损失数额”等侵犯知识产权犯罪入罪标准，体现的是行为人对知识产权权利人权利侵害的程度。侵犯知识产权犯罪还危害到国家对知识产权的管理秩序或者市场经济秩序，但管理秩序或者市场经济秩序并不能起到区分知识产权此罪与彼罪、罪与非罪的作用，并非刑事保护的法益。另外，侵犯知识产权犯罪危害的市场经济秩序也应是基于保护知识产权权利而形成的市场经济秩序，危害的仍然是知识产权权利人的合法权利。如果忽视知识产权权利本质，仅凭市场经济秩序受损与否来判定侵犯知识产权犯罪，将可能导致刑事保护范围的不当扩张，并造成知识产权民事保护与刑事保护的脱节。只有正确理顺知识产权权利保护与市场经济秩序之间的关系，才能有效确保刑事保护精准发力。",
+  "一般来讲，知识产权是民事主体对创造性智力成果和工商业标记所享有的专有权利，具有地域性、时间性以及私权性质决定的专有性。特别是，知识产权不是无限空间的绝对垄断权利，也不是没有时间限制的永恒权利，仅在法律规定的期限内受到保护，一旦超过法律规定的有效期限，相关知识产品即成为整个社会的共同财富，为全人类所共同使用。知识产权刑事保护应当充分考虑知识产权此等属性。《解释》的突出特点就是，相关法条遵循了知识产权权利的基本属性。例如，对假冒服务注册商标行为的定罪量刑标准，《解释》第3条从服务行业特征等实际考虑，基于服务注册商标的特有属性，仅将违法所得数额作为假冒服务商标犯罪的入罪标准，而不考虑假冒商品注册商标涉及的非法经营数额。《解释》第28条第4款规定了假冒服务注册商标行为违法所得数额的具体认定方式：提供服务的违法所得数额，扣除该项服务中所使用产品的购进价款；通过收取服务费等方式营利的，收取的费用应当认定为违法所得数额。该规定充分考虑了服务注册商标的特点以及实践中服务行业的实际情况。再如，《最高人民法院、最高人民检察院关于办理侵犯知识产权刑事案件具体应用法律若干问题的解释》（法释〔2004〕19号，以下简称《2004年解释》）规定“假冒两种以上注册商标”的情形下入罪数额较低。实践中“两种以上注册商标”的认定有争议，有的案件以注册商标号为标准，同一商品上贴附两个以上不同注册商标号的商标，即可认定为“假冒两种以上注册商标”。《解释》第7条第1款立足于商标识别商品、服务来源的基本功能，认为虽然注册商标不同，但贴附在同一商品上，均指向同一商品来源的，此情形不应当认定为“两种以上注册商标”，并据此规定“两种以上注册商标”是指“识别商品、服务不同来源的两种以上注册商标”。",
+  "鉴于知识产权刑事保护关乎人身自由，因此对案件事实的认定和证据的采信标准需更为严格，必须高度重视对知识产权权利属性的遵循与审查。在适用《解释》相关规定时应当看到规则背后的原则，知识产权权利审查是知识产权刑事案件办理的基础。在司法实践中，知识产权刑事保护面临的主要问题在于未能准确把握知识产权的权利属性，进而忽视了对知识产权权利属性的深入审查。例如，注册商标的基本功能在于识别商品、服务来源，这是注册商标的基本属性，商标犯罪办理应当遵循注册商标的该项属性。在冯某某假冒注册商标罪案中，检察院指控冯某某擅自将三星电子株式会社生产的原装打印机改装成三星品牌的其他型号打印机并予销售的行为属于假冒注册商标，法院经审理认为，冯某某的改装行为并没有损害商标指示商品来源的功能，不构成商标侵权，更不构成犯罪。该案判决准确理解了知识产权权利属性。",
+  "### 2. 遵循知识产权案件特点",
+  "知识产权属性决定了知识产权案件具有专业技术性强、法律关系复杂、证据获取难、侵权与合法边界模糊等特点。虽然民事诉讼、刑事诉讼是不同的诉讼制度，在基本原则、举证规则、证据标准、程序规范等方面存在差异，但是知识产权民事、刑事保护的对象均是一项合法有效的知识产权，均涉及权利是否有效、权利归属等专业性问题，知识产权案件特点并不会因为民事、刑事诉讼程序的差异而有较大不同。知识产权刑事保护较民事保护而言，具有惩罚严厉性和强制性，这决定了其更加应当在权利人保护、市场经济秩序维护及被告人权利保障等方面坚持利益平衡。知识产权刑事案件因其更强的专业性，更应遵循知识产权特点及案件处理规律。因此，既要客观看待和遵循知识产权民事、刑事不同领域外在的差异性，又要坚持知识产权案件规律及内在逻辑的一致性。《解释》第1条规定了假冒注册商标罪“同一种商品、服务”的认定标准，对于商品名称不同的情形，需要站在相关公众的一般认知角度，综合考虑商品功能、用途、主要原料、消费对象、销售渠道等要素判断，相关公众视角以及判断要素，与商标民事判断商品相同的标准实质上是一致的，这是知识产权案件特点决定的。",
+  "对知识产权民刑交叉诉讼程序的处理，亦应当遵循知识产权案件特点。不同于普通民商事民刑交叉案件，知识产权民刑交叉案件产生的原因在于，同一侵权行为既具有民事上的可责性，又因侵权严重性的程度递加，同时具备了刑事上的违法性。构成刑事犯罪的前提是民事侵权，同一侵权行为引起的民事侵权和刑事犯罪均侵害了知识产权权利人的合法权利，刑事案件判处侵权人刑罚并不代表权利人的民事赔偿诉求被消除，知识产权权利人仍可以独立提起民事赔偿诉讼。因此，知识产权民刑交叉案件中，民事诉讼和刑事诉讼可以并行处理，或按“先刑后民”“先民后刑”顺序进行。",
+  "### （二）坚守权利法定和罪刑法定双重原则",
+  "知识产权权利法定原则与罪刑法定原则是两个不同的法律原则，它们分别属于知识产权法和刑法领域，但都体现了法律的确定性和可预测性，都体现了法治精神，两者之间具有共性。同时，知识产权部门法作为刑法的前置法，刑法作为保护知识产权权利人的保障法，二者又有所不同。",
+  "### 1. 罪刑法定应当以权利法定为基础",
+  "知识产权权利法定，一般是指知识产权的种类、权利的内容、构成要件、保护期限等由法律确定，原则上除法律授权外，不得在法律之外创设一项知识产权。知识产权权利法定是关于知识产权的基本观念，应当贯穿于知识产权司法过程当中。鉴于创新创造往往是“站在巨人肩膀”的成果，知识产权具有与生俱来的公共性，知识产权公有领域的存在有其合理性和正当性，这就需要明确知识产权保护的客体及其权利边界，在激励保护创新创造和公共利益之间保持平衡，知识产权权利法定原则成为必然。作为刑法的最基本原则，罪刑法定既是刑事立法的准则，又是刑事司法的准则。罪刑法定原则首先要求刑法条文的规定必须明确，普通公众可以根据刑法的明文规定准确预测自己行为的后果。罪刑法定原则要求实践中定罪量刑时必须以行为时的刑法明文规定为法律依据，不得在法律的明文规定之外对行为人定罪量刑，罪刑法定原则是为入罪所建构的第一道法律防线。",
+  "知识产权权利种类及内容的界定是罪刑法定原则的实质性基础。知识产权民刑保护的对象为商标法规定的注册商标权、著作权法规定的作品专有权等。专有权利的重要性体现在其与直接侵权的认定之间的密切关系。每一项专有权利都规制着一类特定行为，权利人可以排斥他人实施特定行为，属于“禁止权”，他人未经许可实施专有权控制的特定行为，便构成侵权。侵犯知识产权犯罪以构成民事侵权为前提，罪刑法定原则要求应当严格依据知识产权部门法对相关概念的界定解释知识产权犯罪。例如，就知识产权刑事保护而言，侵犯著作权罪中的“文字作品、音乐、美术、视听作品、计算机软件”例示类型作品的认定标准，必须与著作权法对上述作品的界定保持一致。如果著作权法对例示类型作品的规定发生变化，刑事领域亦应当随之变化。",
+  "### 2. 权利法定的相对性及罪刑法定的严格性",
+  "在知识产权领域，权利法定原则要求在裁判时必须依据法律明确规定的权利类型和内容进行判断，强调法律的稳定性，通过明确规定知识产权的种类和内容，为社会公众提供明确的法律预期，原则上不得超越法律创设新的权利类型或者内容。但同时，权利法定原则也面临着技术发展带来的新型权利客体保护需求，需要在保护创新和维护法律稳定性之间寻找平衡。知识产权涉及的利益平衡是动态的，立法者可通过概括式的立法方式保证司法者遇到新问题时，在法定主义原则的指导下，通过法律解释解决新问题。虽然，罪刑法定原则也需要适应社会变化，对法律用语和犯罪构成要件进行适当的扩大解释以适应社会发展的需要，但不能进行类推解释。例如，在《刑法修正案（十一）》颁布之前，对假冒服务注册商标的行为是否构成假冒注册商标罪有过争议。曾有观点认为，《刑法》第213条规定的“同一种商品”，除了狭义的商品外还包括服务在内。主要理由为，假冒服务注册商标同样具有社会危害性，假冒服务注册商标的行为也可以构成假冒注册商标罪。再如，在《刑法修正案（十一）》颁布之前，对于非法制造注册商标标识罪中是否包括服务注册商标标识，也存在很多争议。有观点认为，《刑法》第215条规定的非法制造、销售非法制造的注册商标标识犯罪针对的是“注册商标标识”，法律并没有明确限定为“商品注册商标标识”，可以将非法制造、销售非法制造“服务注册商标标识”行为纳入非法制造、销售非法制造的注册商标标识罪规制范围内。根据《刑法》第213条的规定，只有“在同一种商品上使用与其注册商标相同的商标，情节严重的”，才构成犯罪。基于文义解释优先和刑法明确性原则，从相关公众的视角看，商品与服务明显属于不同的行业类别。从商标注册角度而言，商品注册商标与服务注册商标亦属不同类型，商品显然不能包括服务。在《刑法》以及相关司法解释未将假冒服务注册商标纳入刑法规制范围的情况下，不宜因为商标法规定对商品商标的有关规定适用于服务商标，就当然认为在刑法上对商品商标的规制同样适用于服务商标，这是罪刑法定原则的基本要求。《刑法修正案（十一）》充分考虑当前社会各界对加强服务注册商标刑事保护的强烈需求和实际需要，将服务注册商标纳入刑法规制范畴，既完善了我国注册商标刑事保护制度，也充分说明了《刑法修正案（十一）》之前假冒注册商标罪并不包括服务注册商标。商标犯罪的本质是破坏了注册商标指示商品来源的功能，危害了注册商标权。因此，假冒注册商标罪是商标犯罪的主要形式，非法制造注册商标标识行为是假冒注册商标行为的上游环节，相对假冒注册商标罪而言具有附属性。《刑法修正案（十一）》之前，假冒服务注册商标不能作为犯罪处理，非法制造注册商标标识罪亦不应当包括服务注册商标，这是罪刑法定原则的应有之义。",
+  "坚持罪刑法定原则的严格性，对于准确划分知识产权民事侵权与刑事犯罪的界限，以及有效防止刑事手段不正当介入民事纠纷，具有至关重要的作用。例如，关于假冒注册商标罪涉及的“基本相同商标”的认定，《解释》第2条明确了认定规则，基本相同限于假冒的商标标识与注册商标存在细微差别的情形，例如改变文字大小写、间距，图形商标仅有细微差别等。实践中，需要严格把握“基本无差别、足以对公众产生误导”的这个条件，要防止将近似商标纳入刑法规制范围。在民事案件中，判断商标是否相同或者近似，一般采用隔离观察方法，即将商标置于不同时间和地点加以观察。但刑事案件中的相同商标认定标准较为严格，应当采取现场比对观察方法，即将商标放在一起进行观察，并且需要全面比对，不可仅将标识的显著识别部分比对。否则，这种做法容易错误地将民事侵权行为当作犯罪来处理，从而模糊了民事侵权与刑事犯罪的界限。",
+  "### （三）维护法秩序统一性原则",
+  "随着社会经济高速发展和科学技术的广泛运用，法律关系更为复杂多样，同一法律行为引起的法律责任可能会涉及民事、刑事等不同法域。知识产权法律规范专业性强，相应的法律行为导致的法律关系、法律责任更为错综复杂，使得侵权与犯罪界限并非截然分明。这就需要法秩序统一性原则来统筹协调知识产权民事、刑事等不同法域之间的法律规则，促使民事、刑事法律规则之间互相协调，形成完整体系。在知识产权司法保护科学合理体系下，知识产权刑事保障民事、行政保护功能充分发挥的特点才能充分展现。",
+  "### 1. 知识产权刑事保护的相对附属性",
+  "在知识产权司法保护体系中，民事保护和刑事保护的职能和定位有所不同。知识产权民事保护旨在明确和确立知识产权司法规则，在保护知识产权权利人合法权益的同时平衡与社会公共利益的关系；知识产权刑事保护旨在维护以知识产权权利人权利为基础的公平竞争市场经济秩序，严惩并预防侵权行为发生，知识产权刑事保护相对于民事保护而言具有附属性。前述认为《刑法》规定的“复制发行”可以涵括《著作权法》规定的所有法定利用行为、《刑法》规定的“通过信息网络向公众传播”的解释不应受《著作权法》中信息网络传播权定义的限制等观点，没有全面理解知识产权部门法与刑法之间的关系。《著作权法》规定的复制发行、信息网络传播专有权利的界定是刑事领域认定犯罪的基础，不能不当扩大。否则，可能将仅仅属于民事侵权的行为误认为犯罪行为，混淆了民事侵权和刑事犯罪的边界；也可能将不属于民事侵权的行为认定为犯罪行为，违反了权利法定和罪刑法定原则。例如，行为人通过场地放映盗版电影，以收取电影票的方式牟利。通过场地放映盗版电影是否属于复制后广泛运用的行为，能否评价为侵犯著作权罪中的“复制发行”？根据《著作权法》第10条的规定，发行是以出售或者赠予方式向公众提供作品的原件或者复制件的行为，放映是通过放映机、幻灯机等技术设备公开再现美术、摄影、视听作品等的行为。行为人的上述行为应当是放映行为，侵犯了著作权人的放映权而非发行权，而放映行为并非侵犯著作权罪规制的行为。《解释》严格遵循刑事法律规范相对附属性的原则，如第12条对“通过信息网络向公众传播”的规定与著作权法保持一致。",
+  "知识产权刑事保护的附属性还应当遵循不同法律领域规范目的内在一致性原则。整体法秩序内部是统一的，即许多部门法背后所展示出来的整体法秩序不存在内在矛盾。据此，需要在整体法秩序原则下统筹知识产权部门法和刑法的相关规定，以准确理解侵犯知识产权犯罪的相对附属性。在著作权刑事保护领域，根据《2004年解释》的规定，知识产权刑事保护中“复制发行”的外延涵盖了信息网络传播行为。进入21世纪，随着互联网技术和信息产业的迅猛发展，未经著作权人许可在互联网上传播作品的行为非常突出，侵害了著作权人的合法权益，由于没有明确的法律依据，著作权人的利益在网络空间中受到了极大损害，司法机关在处理这类案件时也感到相当棘手，各界逐渐对互联网空间中的著作权保护达成共识。2001年修改《著作权法》时增加了信息网络传播权这项权能，还明确规定通过信息网络向公众传播其作品是一种侵权行为，构成犯罪的，依法追究刑事责任。《2004年解释》根据著作权法的相关规定，明确刑法中的“复制发行”包括“通过信息网络向公众传播行为”。著作权法明确规定了信息网络传播权是著作权人享有的一项专有权利及未经著作权人许可通过信息网络向公众传播其作品的行为是一种侵权行为。在此前提下，《2004年解释》才作出相关规定，著作权法的规定亦是司法解释制定的重要法律依据。《2004年解释》规定“通过信息网络向公众传播他人作品的行为”为犯罪行为，从刑事规范目的角度而言，是扩大解释，并不违反著作权法是刑事法律规范的前置法及罪刑法定原则，使互联网著作权的刑事保护有了明确法律依据，从而实现刑法规制的实质正义。但是，这“仅是在短时间内无法对刑法作出修改的情况下需要司法解释作出的司法变通措施，是一种暂时性权宜之计”。实践中，著作权法和刑事法律规范概念的不一致可能会给司法实践带来一些困惑。将“通过信息网络向公众传播”纳入“复制发行”范畴，解决了司法实践中的问题，但司法解释治标不治本，立法应当及时回应。因此，《刑法修正案（十一）》作出了相应修改，确保了法条文字含义的统一，增强不同法律部门之间规则的协同性，更有利于法秩序内在的统一性。",
+  "### 2. 刑事规范的相对独立评价性",
+  "如前所述，法秩序统一性主要是指各部门法背后所指的法秩序内在统一，各部门法所维护的秩序是统一的，是内在精神的统一，而非仅指部门法之间法条文字含义的统一，而非表面的统一。法秩序统一性要求在遵循不同法律领域自身特点的前提下，做到不同法域法律规范保护目的一致。知识产权民事保护侧重于司法保护规则的研究和完善，给创新创造市场主体提供清晰明确、可预期的司法规则，实现纠纷化解、定分止争。而知识产权刑事保护侧重于犯罪构成要件事实的认定及实行行为性质的界定，两者存在客观差异。刑事保护的特殊性及刑事案件性质，决定了刑事规范具有相对独立评价性。站在刑事保护的视角，可以研究民事保护中的相关规则及观点是否合理，以及它们是否符合知识产权的本质属性和案件的实际规律。例如，在民事侵权领域，关于信息网络传播权的侵权判定标准一直充满争议，特别是在深度链接的侵权判定上，存在“服务器标准”“用户感知标准”“实质呈现标准”“实质替代标准”等标准，众说纷纭，该问题在著作权法学界和司法界已经存在十余年。持“服务器标准”的观点认为，深度链接情形下的行为并未直接侵犯作品本身，不属于直接侵犯信息网络传播权的行为。实践中，对深度链接是否属于侵犯信息网络传播权的民事侵权行为存在不同的认定。例如，在北京某科技有限公司与深圳市某计算机系统有限公司侵害作品信息网络传播权纠纷案中，有意见认为，北京某科技有限公司实现了在其聚合平台上向公众提供涉案作品播放等服务的实质性替代效果，属于对信息网络传播权的民事侵权。另有意见认为，信息网络传播行为指向的是初始上传行为，服务器标准作为信息网络传播行为的认定标准最具合理性，依据服务器标准，无论是深度链接行为，还是普通链接行为，均不属于信息网络传播行为。然而，在刑事领域对深度链接行为进行刑事处罚的案件时有发生。",
+  "对深度链接行为定罪处罚，是将不属于民事侵权的行为认定为犯罪从而导致民刑脱节？还是服务器标准作为信息网络传播行为界定标准本身存在问题？从我国著作权法和相关国际条约的规定来看，信息网络传播权的权利内容为以“向公众提供”为核心，“提供”方式和效果为“相关公众可以在其选定的时间和地点获得作品的权利”，并未限定“提供行为”仅为初始上传行为，也未限定将他人作品“置于服务器中”。根据《最高人民法院关于审理侵害信息网络传播权民事纠纷案件适用法律若干问题的规定》（法释〔2012〕20号）第3条第2款的规定，通过上传到网络服务器、设置共享文件或者利用文件分享软件等方式，将作品、表演、录音录像制品置于信息网络中，使公众能够在个人选定的时间和地点以下载、浏览或者其他方式获得的，应当认定其实施了提供行为。因此，“上传到服务器”应当理解为仅是提供方式之一，而且提供行为系“置于信息网络”而非“置于服务器”，应将信息网络传播行为作广义的理解，以是否直接提供权利人作品的法律标准取代服务器标准来界定信息网络传播行为。从刑事案件注重实行行为及其社会危害性角度考量，深度链接行为能够实现相关公众在其选定的时间和地点从行为人提供的网页链接等处获得作品。“盗链”行为侵害了权利人对作品进行信息网络传播行为的控制权，剥夺了被链网络服务者应当获取的收益，损害了权利人的合法权利，破坏了社会秩序，具有较大的社会危害性，构成直接侵权。例如，在张某、孙某侵犯著作权罪案中，张某、孙某通过“盗链”（利用购买的技术解析服务，绕过影视作品权利人的技术保护措施，获取正版影视平台的原始播放链接）等方式在自建平台上播放，通过涉案APP非法传播视听作品8.3万余部，点击量高达4000亿余次，收取非法广告费用3.92亿余元，构成侵犯著作权罪。不言而喻，该案行为具有严重的社会危害性，实施的是侵犯信息网络传播权的行为，应当予以法律规制。如果依据服务器标准，将无法对“盗链”等深度链接行为以直接侵权方式进行规制，民事侵权责任无法发挥作用，刑事制裁更不能适用，显然忽视了此类行为对权利人利益的损害及对市场经济秩序的破坏，不适应知识产权保护的司法需求和社会实际。从刑事保护侧重的实行行为及其社会危害性角度对服务器标准进行检视，可以发现服务器标准在保护著作权人权利方面存在不足，不宜成为信息网络传播行为认定标准。因此，刑事保护的相对独立评价性，可以用来检视民事领域中一些争议问题的是与非、对与错。",
+  "### （四）坚持严格保护与刑法谦抑有机融合原则",
+  "根据刑法以及《解释》的规定，知识产权刑事保护仅限于打击刑法明文规定的严重侵权行为，此类侵权行为不仅严重损害了知识产权权利人的合法权利，而且危害到公平竞争的市场经济秩序，区别于一般民事侵权行为。在严格知识产权保护形势下，应准确区分民事侵权与刑事犯罪，防止刑事手段不正当介入民事纠纷。另外，知识产权刑事保护应全面贯彻宽严相济刑事政策，对于具有从轻、减轻处罚情节的，仍然要从轻或者减轻处罚，以确保严格保护和刑法谦抑兼得。",
+  "### 1. 知识产权严格保护是主基调",
+  "严格保护知识产权是实施创新驱动发展战略的必然要求，是我国当前和今后一个时期知识产权司法保护的基本方向。《知识产权强国建设纲要（2021—2035年）》提出“加大刑事打击力度”“修改完善知识产权相关司法解释”。中共中央办公厅、国务院办公厅2019年印发的《关于强化知识产权保护的意见》明确要求，“推进刑事法律和司法解释的修订完善”“研究降低侵犯知识产权犯罪入罪标准”“提高量刑处罚力度”。《刑法修正案（十一）》对侵犯知识产权犯罪作了重大修改，增加入罪情形，完善入罪标准，增设新罪名，提高最高刑和最低刑，充分体现了严格知识产权司法保护的政策导向和立法精神。《解释》关于侵犯知识产权犯罪入罪标准主要沿用《2004年解释》的规定，标识犯罪等入罪门槛进一步降低，从源头上遏制侵犯知识产权犯罪，凸显知识产权严格保护理念。从打击侵权犯罪源头以及确保罪责刑相一致角度考虑，非法制造、销售非法制造的注册商标标识罪较假冒注册商标罪、销售假冒注册商标的商品罪而言，入罪及升档量刑标准的门槛要更低，《解释》第6条降低了非法制造、销售非法制造的注册商标标识罪的入罪和升档量刑标准。",
+  "### 2. 严格保护形势下应当秉持刑法谦抑性",
+  "鉴于知识产权本质上属于民事权利，其司法保护主要依赖于民事法律手段。从本质上而言，知识产权私权性质决定了其刑事审判较一般刑事案件审判而言，更应当保持谦抑。一是作为无形财产权的知识产权权利边界常常不够清晰且相对不稳定。因此，较之一般刑事案件，知识产权刑事案件中罪与非罪标准的认定具有特殊性和复杂性。在知识产权保护需诉诸刑罚时，务必遵循更加严格的司法标准，精确界定民事侵权与刑事犯罪的界限。即使对于犯罪行为，也应当基于不同行为社会危害性的差异，设置不同的入罪标准。例如，关于侵犯商业秘密罪损失数额的认定，《解释》第18条坚持罪责刑相一致原则，区分不同行为的社会危害程度，规定不同的认定标准。对于以盗窃等不正当手段获取商业秘密的情形，这种行为的社会危害性较违约侵犯商业秘密行为的社会危害性大，应当予以重点打击和防范，可以许可使用费作为入罪标准；对于违约型侵犯商业秘密的情形，由于行为人对商业秘密的知悉和持有是合法正当的，较不正当手段获取型社会危害性相对小，在入罪门槛上应当有所区别，造成的损失按照行为人使用商业秘密造成权利人利润的损失计算。二是知识产权刑事保护的启动应当考虑利益平衡原则。知识产权制度的设计既要保护知识产权创造者的合法权利和利益，也要促进科学、技术、文化的广泛传播，这就需要在知识产权创造、保护、运用等环节坚持利益平衡原则。一般而言，刑事案件裁判结果对涉案当事人利益以及社会公共利益的影响较民事案件而言更大，在提高我国知识产权刑事保护水平的同时，也要注意刑法的谦抑性，防止刑法泛化造成对公民合法权益的严重侵害。将知识产权侵权行为与犯罪行为进行严格区分仍然是世界各国立法的主流趋势。刑法对社会生活的干预应当适度，在确立其干预范围时，必须考虑刑法介入的必要性、手段的相当性和实际的可执行性。三是对于知识产权保护，我国法律区分违法行为与犯罪行为，分别予以行政处罚与刑事惩罚，这种区分行政处罚与刑事惩罚的层次化方式，为知识产权提供了全方位的保护。在我国知识产权保护体系下，刑事保护范围限于严重的侵权行为是合适的。比如，侵害企业名称、商号以及将近似商标用于类似商品等侵权行为，民事侵权救济和行政处罚足以保护，并不需要动用刑事手段。特别是在知识产权部门法规定惩罚性赔偿的情形下，可以通过加大赔偿力度，充分发挥民事保护制止侵权、填平损失、定分止争功能。只有当民事侵权救济无法对抗严重侵权行为带来的对权利人的损害和市场经济秩序的破坏，不足以制止侵权行为时，才能启动刑事保护，以确保刑事保护仅适用于社会危害性大的严重侵权行为。只有准确划清知识产权刑事保护范围及其与民事保护的关系，才能有效促使民事保护、刑事保护既有效衔接又泾渭分明，知识产权刑事保护的功能才能精准发挥。",
+  "综上，这四项原则既相互独立，又紧密相连。遵循知识产权权利属性原则是其他原则的基础和核心；知识产权权利法定原则则是基于知识产权的特性而确立的，是总结知识产权案件规律的立足点；坚持双重法定原则是刑事基本原则在知识产权刑事案件中的具体体现。由于知识产权保护体系的综合性，法秩序统一性原则要求刑事保护与知识产权部门法等民事法律规范目的保持一致。同时，知识产权的私权属性及我国民事、行政、刑事多层次的保护模式决定了知识产权刑事保护必须保持谦抑性和保守性，刑事保护仅限于惩治刑法明文规定的严重知识产权侵权行为。",
+  "## 结 语",
+  "知识产权刑事保护是一个涉及知识产权法学、刑法学等多部门多领域的复杂交叉地带，是值得深入研究的领域。当前，知识产权司法保护是我国知识产权保护体系的重要内容，刑事保护在知识产权综合管理体制、知识产权保护体系中的作用日益凸显，研究知识产权刑事保护原则具有重要意义。一是有助于法律规则适用的统一。法律原则是蕴含在法律规则内的重要内容，更加贴近法律精神和实质。准确理解知识产权刑事保护的四项原则，对于准确理解和适用《解释》具有指引意义。二是有助于构建高效衔接的知识产权司法保护机制。知识产权刑事保护原则的确立，有利于划清刑事保护边界，确保刑事保护的适用既能充分发挥知识产权刑事保护惩罚犯罪、维护秩序、预防侵权功能，又有效防止利用刑事手段不当介入知识产权民事纠纷，形成知识产权刑事保护与民事保护的有效衔接，为创新创造营造良好的法治环境。三是有助于推动知识产权刑事保护理论研究的发展。刑事保护原则是知识产权刑事保护基础理论研究的重要内容，保护原则的确立既可以对知识产权刑事保护政策发展等宏观性研究提供借鉴，还可为侵犯知识产权犯罪罪状界定等具体法律适用问题研究提供思路。",
+  "相关链接：2023年第10期｜董涛：全球化时代侵犯知识产权犯罪治理研究"
+];
+
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push({
+  id: "research-1", cat: "research", date: "2025-07-01",
+  title: "知识产权刑事保护原则之探析",
+  sub: "许常海　中国政法大学民商经济法学院博士研究生",
+  paras: (window.RESEARCH1_PARAS_A || []).concat(window.RESEARCH1_PARAS_B || []),
+  source: "来源：《知识产权》2025年7期　责任编辑：吉利　编辑：晏如　审读：刘珊"
+});
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 专业研究二《全国法院环境资源刑事审判工作座谈会纪要》
+   ================================================================== */
+window.ARTICLES = window.ARTICLES || [];
+window.ARTICLES.push(
+  {
+    id: "research-2", cat: "research", date: "2026-09-17",
+    title: "全国法院环境资源刑事审判工作座谈会纪要",
+    sub: "法〔2026〕150号",
+    paras: [
+      "最高人民法院关于印发《全国法院环境资源刑事审判工作座谈会纪要》的通知",
+      "各省、自治区、直辖市高级人民法院，解放军军事法院，新疆维吾尔自治区高级人民法院生产建设兵团分院：",
+      "《全国法院环境资源刑事审判工作座谈会纪要》已于2026年6月4日由最高人民法院审判委员会刑事审判专业委员会第529次会议通过。现印发给你们，请结合审判工作实际参照执行。执行中遇到问题，请及时层报最高人民法院。",
+      "最高人民法院　2026年9月17日",
+      "为深入学习贯彻习近平新时代中国特色社会主义思想，认真贯彻落实习近平生态文明思想和习近平法治思想，切实做好生态环境法典贯彻实施工作，用最严格制度最严密法治保护生态环境、维护生态安全，全面推进美丽中国建设，最高人民法院于2026年5月14日在贵阳组织召开了全国法院环境资源刑事审判工作座谈会。最高人民法院党组成员、副院长杨临萍出席并主持会议。",
+      "会议强调，环境资源刑事审判工作要始终坚持以习近平新时代中国特色社会主义思想为指导，深入贯彻习近平生态文明思想和习近平法治思想，深刻领悟“两个确立”的决定性意义，增强“四个意识”、坚定“四个自信”、做到“两个维护”。要始终坚持党的绝对领导，坚定不移走中国特色社会主义法治道路，不断提高政治判断力、政治领悟力、政治执行力。要聚焦服务党和国家工作大局，全面落实生态环境法典的立法精神与制度要求，忠诚履行宪法法律赋予的职责，坚决扛起护航美丽中国建设的政治责任、法治责任、审判责任。要始终坚守司法为民初心使命，努力让人民群众在每一个司法案件中感受到公平正义，深入践行生态环境法典保障公众健康和生态环境权益的立法目的，解决人民群众反映强烈的大气、水、土壤等突出问题，持续打好蓝天、碧水、净土保卫战，用心用力用情守护良好生态环境这一最普惠的民生福祉。",
+      "会议要求，环境资源刑事审判工作要坚定不移贯彻总体国家安全观，在国家更加安全、社会更加有序、治理更加有效、人民更加满意上持续用力，守牢美丽中国建设安全底线。要坚持统筹发展和安全，牢固树立发展是硬道理、安全也是硬道理的理念，坚持以新安全格局保障新发展格局，高度重视粮食、能源、水、战略性矿产资源、生物等领域安全，以刑事法治助推全域联动、立体高效的生态安全防护体系建设。要坚持防范化解生态环境安全风险，始终保持高度警觉，充分发挥环境资源刑事审判职能作用，对生态环境潜在安全风险做到早识别、早预警、早处置，切实筑牢生态环境安全防线。",
+      "会议要求，环境资源刑事审判工作要全面准确贯彻宽严相济刑事政策，准确把握“宽”和“严”的辩证关系，根据犯罪的具体情况，实行区别对待，做到该宽则宽，当严则严，宽严相济，罚当其罪。要准确把握依法从“严”的政策要求，坚持最严格制度最严密法治，牢牢守住生态保护红线、环境质量底线、资源利用上线。依法严惩重点领域、重点区域、重点行业、针对重点对象的环境资源犯罪；依法严惩严重危害国家安全和社会治安、严重危害公众健康和生态环境权益的环境资源犯罪；依法严惩污染环境、破坏生态主观恶性深、构成累犯以及具有惯犯、职业犯等情节的被告人。要准确把握依法从“宽”的政策要求，准确区分污染环境、破坏生态行为是仅构成行政违法，还是同时构成犯罪。对于情节较轻、危害不大的环境资源犯罪，或者行为人有主动消除或减轻危害后果、有效采取生态环境修复措施、及时缴纳赔偿金等法定、酌定从宽情节的，要依法体现从宽。要坚持以法为据、以理服人、以情感人，尊重人民群众朴素公平正义观，在法律规范的裁量空间内，依法寻找最佳处理方案。要全面落实“严格依法办理、裁判标准统一、宽严理据充分”的要求，努力实现办理环境资源刑事案件政治效果、法律效果、社会效果有机统一，做实最佳生态效果。",
+      "会议要求，环境资源刑事审判工作要坚持协同共治，积极促推生态环境治理体系和治理能力现代化。要因地制宜加强区域流域司法协作，努力在司法政策统一、裁判规则统一、机制标准衔接、跨域执行协同等方面取得更大实效。要强化与公安、检察、行政等部门在信息共享、线索移送、配合取证、程序衔接等方面协同配合，共同提升生态环境系统治理和整体保护水平。要综合考虑行为人的刑事责任、行政责任与民事责任，加快实现法律责任的统筹适用。要坚持治罪与治理并重，特殊预防与一般预防并重，加强生态环境法治宣传教育，弘扬生态文化，增强公众的生态环境保护意识和法治素养，从源头上预防和减少环境资源犯罪。",
+      "会议针对当前审理刑法第二编第六章第六节规定的破坏环境资源保护罪案件司法实践中的一些疑难问题，根据有关法律和司法解释规定，结合审判实际进行了深入研究和分析，并就相关问题达成共识。现形成纪要如下：",
+      "## 一、一般规定",
+      "1.对于单位实施刑法第三百三十八条至第三百四十五条规定的环境资源犯罪的，应当依法追究单位及相关人员的刑事责任。同时，坚持惩治与预防相结合的原则，引导并监督单位及相关人员积极履行生态环境修复责任，实现刑事制裁与生态修复、源头治理有效衔接。",
+      "对单位实施环境资源犯罪起决定、批准、组织、策划、指挥等作用的单位法定代表人、主管负责人、实际控制人，或者经授权的分管负责人、高级管理人员等，应当认定为直接负责的主管人员。其他积极参与实施单位犯罪或者对具体实施单位犯罪起较大作用的单位经营管理人员、职工、聘任或雇佣的人员等，可以认定为其他直接责任人员。",
+      "受直接负责的主管人员指派在单位犯罪中仅参与实施了部分行为且情节轻微、作用较小的人员，不宜认定为其他直接责任人员。",
+      "2.对于污染环境、破坏生态行为未被追究刑事责任或者被免予刑事处罚的被告人，依法应当给予行政处罚、政务处分或者其他处分的，依法移送有关主管机关处理。",
+      "3.对环境资源犯罪被告人、被告单位判处罚金，应当综合考虑违法所得数额、生态环境损害后果、履行生态环境损害民事责任等情形，依法合理确定罚金数额。",
+      "4.行政主管部门发现污染环境、破坏生态行为涉嫌犯罪并向公安机关移送案件后，尚未受到讯问、未被采取强制措施的行为人主动向公安机关、人民检察院或者人民法院投案的，应当认定为自动投案。",
+      "5.环境资源犯罪有关司法解释中，规定二年内曾因实施特定污染环境、破坏生态行为受过二次以上行政处罚后又实施特定行为作为“情节严重”等入罪情形的，“二年内”以第一次违法行为受到行政处罚的生效之日与又实施相应行为之日的时间间隔计算确定。违法行为人针对第一次行政处罚申请行政复议或者提起行政诉讼的，不影响第一次行政处罚生效时间的认定。但是第一次行政处罚决定被行政复议决定或行政判决撤销，或者法律另有规定的除外。",
+      "前款规定中的“二次以上行政处罚”，既可以是同一行政机关作出，也可以是不同行政机关作出；既可以是同种行政处罚，也可以是不同种行政处罚。",
+      "对同一污染环境、破坏生态行为因违反多个法律规范而由不同行政机关分别依法作出的行政处罚视为一次行政处罚，并以第一个行政处罚的生效之日作为计算此次污染环境、破坏生态行为受到行政处罚的生效时间。",
+      "6.公安机关在办理破坏环境资源犯罪案件时，为查明生态环境损害事实，委托相关机构出具的鉴定意见、评估报告，或者委托具有专门知识的人出具的专家意见等，经庭审质证后，可以作为基于相同的生态环境损害事实提起的环境资源民事、行政诉讼案件中的证据材料。",
+      "## 二、关于污染环境犯罪",
+      "7.收集、贮存、运输、利用危险废物等行为是否构成非法排放、倾倒、处置危险废物行为，应当从行为方式是否违反国家规定或者行业操作规范，污染物是否与外环境接触或者其中的有毒有害成分大量扬散、流失、渗漏、挥发等而与外环境接触，是否造成环境污染的危险或者危害等方面综合分析判断。",
+      "8.“非法处置危险废物”，是指违反国家规定，无危险废物经营许可证，用改变危险废物的物理、化学、生物特性的方法对其进行处理，并具有下列情形之一，造成环境污染的行为：（1）将处理后的危险废物或者产生的其他污染物直接向外环境排放、倾倒的；（2）虽未直接向外环境排放、倾倒，但处理后的危险废物或者产生的其他污染物中的有毒有害成分大量扬散、流失、渗漏、挥发等而与外环境接触的。",
+      "无危险废物经营许可证，以营利为目的，从危险废物中提取物质作为原材料或者燃料，并具有超标排放污染物、非法倾倒污染物或者其他违法造成环境污染的情形的行为，应当认定为“非法处置危险废物”。",
+      "9.排放、倾倒、处置含超标重金属的污染物构成污染环境罪的，量刑时应当综合考虑排放、倾倒、处置污染物的数量、次数、持续时间、污染的区域和范围等因素。",
+      "10.明知他人无危险废物经营许可证，危险废物产生者、倒卖者、居间介绍者等仍向他人提供或者委托他人收集、贮存、利用、处置危险废物，严重污染环境的，以共同犯罪论处。",
+      "依照前款规定以共同犯罪论处的行为人，应当明知他人无危险废物经营许可证，以及向其提供或委托其收集、贮存、利用、处置的是危险废物。行为人是否明知他人后续实施了严重污染环境的行为及结果，不影响以共同犯罪论处。",
+      "非法出租、出借危险废物经营许可证的人员，以及参与非法运输危险废物的人员，是否与直接实施非法排放、倾倒、处置危险废物的行为人构成共同犯罪，应当依照刑法关于共同犯罪的规定认定。",
+      "11.危险废物经过多次流转交易的，对危险废物的最终处理行为是否造成“严重污染环境”的后果，不能仅依据行为人向无危险废物经营许可证的他人提供或者委托他人收集、贮存、利用、处置危险废物而直接推定。危险废物去向不明或者最终处理方式没有查清的，应当综合审查危险废物的理化及生物特性、利用价值、交易价格、处理成本、是否存在利益链条等因素，结合全案证据认定。",
+      "12.行为人违反排污许可证、污水排入排水管网许可证的规定，或者未依法取得排污许可证、污水排入排水管网许可证，将有放射性的废物、含传染病病原体的废物或者有毒物质排入公共污水处理管网的，最终排放到外环境中的污水是否符合国家或者地方规定的有关排放标准，不影响对行为人非法排放行为性质的认定。",
+      "13.行为人明知城镇污水处理设施维护运营单位不具备有放射性的废物、含传染病病原体的废物或者有毒物质的处理资质，仍将相关废物或者有毒物质交该单位处理，城镇污水处理设施维护运营单位通过稀释方式降低浓度后排放到外环境的，或者采用其他违反国家规定方式进行处理的，不影响对行为人、城镇污水处理设施维护运营单位非法排放行为性质的认定。",
+      "14.在因环境行政违法行为被责令限期整改期间，违反国家规定排放、倾倒、处置有放射性的废物、含传染病病原体的废物、有毒物质或者其他有害物质被从重处罚的，“限期整改”既包括有关行政主管部门依据明确包含“限期整改”内容的规定作出的“责令限期整改”行政行为，也包括其他具有“限期整改”内容的行政行为，如责令限期治理、限期改正等。",
+      "15.实施刑法第三百三十八条、第三百三十九条规定的行为造成的公私财产损失中，“为防止污染扩大、消除污染而采取的必要合理措施”包括下列措施：（1）在污染场地铺设防渗膜、设置集水排水系统等防止污染物渗漏和扩散的；（2）设置屏障等防止污染土壤、污泥、沉积物、固体废物、非水相液体等污染物迁移的；（3）清挖、转运污染土壤的；（4）将污染物等有害物质进行无害化处置的；（5）其他为防止污染扩大、消除污染而采取的必要合理措施。",
+      "16.从事收集、贮存、利用、处置危险废物经营活动时，具有下列情形之一的，应当认定为“无危险废物经营许可证”：（1）未申请领取许可证或者申请领取许可证未被审批的；（2）许可证已经被吊销、收缴的；（3）许可证已经被撤销、撤回的；（4）许可证已经被注销或者有效期届满后未获延续的；（5）伪造、变造、租用、借用、盗用、冒用许可证的；（6）改变危险废物经营方式需要重新申请领取许可证而未申请的；（7）增加危险废物类别需要重新申请领取许可证而未申请的。",
+      "## 三、关于破坏矿产资源犯罪",
+      "17.名为工程施工、生态整治、矿区生态修复、煤田灭火、边坡治理、土地整理、航道疏浚等活动，实为违反矿产资源法的规定，非法开采矿产资源，符合刑法第三百四十三条第一款规定的，以非法采矿罪定罪处罚。",
+      "18.建设项目施工单位在批准的作业区域（不含临时用地）和建设工期内，因施工需要采挖只能用作普通建筑材料的砂、石、黏土，擅自对外出售或者以赠与等方式处置的，可不认定构成非法采矿罪。",
+      "19.在非法开采行为结束前，与破坏矿产资源犯罪分子事前或者事中通谋的，应当认定为形成共同犯罪故意。",
+      "明知他人将要或者正在实施破坏矿产资源行为，仍为其提供专门用于犯罪的资金、场地、机械设备、船舶、机动车、单据、证明、手续等重要便利条件，结合全案证据可以认定为与他人形成通谋的，以共同犯罪论处。",
+      "20.受雇佣为破坏矿产资源犯罪提供劳务的人员，因领取“高额固定工资”而被以犯罪论处的，对于“高额固定工资”，应当结合本地区经济社会发展水平、采矿行业提供劳务人员或者相当职务人员的平均工资水平等情况综合审查认定。",
+      "21.具有下列情形之一的，可以认定为用于破坏矿产资源犯罪的专门工具，依法没收：（1）犯罪分子所有，并专门用于破坏矿产资源犯罪的；（2）所有人明知犯罪分子专门用于破坏矿产资源犯罪而出租、出借，构成共同犯罪或者相关犯罪的。",
+      "22.作为认定非法开采的矿产品价值根据的矿产品价格，一般以非法开采行为终了之时当地同种矿产品市场价格为基准；对于价格波动显著的，以波动周期内的平均价格为基准。",
+      "23.非法开采的矿产品在不同环节出售，非法开采、加工、保管、运输等过程中支出的费用在计算销赃数额时不予扣除。",
+      "24.坚持全链条打击涉砂犯罪，依法追究非法开采、运输、过驳、销售等各环节行为人的刑事责任，对办案中发现的相关违法犯罪线索，及时向有关单位移送。",
+      "25.审理涉河砂、江砂、湖砂刑事案件，可以参照执行《最高人民法院、最高人民检察院、中国海警局关于印发〈关于依法打击涉海砂违法犯罪座谈会纪要〉的通知》（法发〔2023〕9号）。",
+      "## 四、关于破坏野生动物资源犯罪",
+      "26.刑法第三百四十条规定的非法捕捞水产品罪的犯罪对象，是指水生动物。非法捕捞的水生植物属于国家重点保护植物，或者由于非法捕捞水生植物严重污染水环境，构成危害国家重点保护植物罪或污染环境罪等其他犯罪的，依法以其他犯罪定罪处罚。",
+      "27.《最高人民法院、最高人民检察院关于执行〈中华人民共和国刑法〉确定罪名的补充规定（七）》（法释〔2021〕2号）确定的“危害珍贵、濒危野生动物罪”不是选择性罪名，适用本罪名时应当统一表述为“危害珍贵、濒危野生动物罪”。",
+      "28.刑法第三百四十条规定的“禁用工具”和“禁用方法”，应当根据国务院渔业渔政主管部门制定的有关标准认定。国务院渔业渔政主管部门对涉案水域没有制定“禁用工具”和“禁用方法”标准的，可以根据省、自治区、直辖市人民政府渔业渔政主管部门制定的有关标准认定。",
+      "刑法第三百四十一条第二款规定的“禁用工具”和“禁用方法”，应当根据生态环境法典第八百一十九条第一款、野生动物保护法第二十四条第一款等有关规定认定。",
+      "29.在禁渔区使用禁用的工具或方法捕捞水产品的，或者在禁渔期使用禁用的工具或方法捕捞水产品的，应当综合考虑渔获物的数量、价值，捕捞工具、方法，对水生生物资源造成的危害程度，以及行为人的主观动机、目的，是否自愿接受行政处罚，是否积极修复生态环境等情节，依法决定是否追究刑事责任，不能仅依行为人在形式上符合“双禁”情形就一律定罪处罚。",
+      "在禁猎区使用禁用的工具或方法狩猎的，或者在禁猎期使用禁用的工具或方法狩猎的，亦应当综合考虑猎获物的数量、价值，狩猎工具、方法，对野生动物资源造成的危害程度，以及行为人的主观动机、目的，是否自愿接受行政处罚，是否积极修复生态环境等情节，依法决定是否追究刑事责任，不能仅依行为人在形式上符合“双禁”情形就一律定罪处罚。",
+      "30.审查是否构成刑法第三百四十四条之一规定的“情节严重”，应当结合涉案外来入侵物种的种类和数量，造成人员伤亡或公私财产损失情况，对当地动植物资源及其生存环境等造成损害情况，涉案区域是否为国家公园、自然保护区、永久基本农田、生态保护红线区、国家确定的重要江河和湖泊水域等情况综合判断。"
+    ],
+    source: "来源：人民法院报·4版　责任编辑：肖雅雯"
+  }
+);
+</script>
+
+<script>
+/* ==================================================================
+   SECTION: 路由与渲染
+   ================================================================== */
+var SITE = window.SITE;
+var ARTICLES = window.ARTICLES || [];
+
+function esc(s){
+  return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")
+                  .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+/* 按日期升序排序：最新的在最下面 */
+function catList(cat){
+  var list = ARTICLES.filter(function(a){ return a.cat === cat; });
+  var dated = list.filter(function(a){ return a.date; });
+  var undated = list.filter(function(a){ return !a.date; });
+  dated.sort(function(a,b){ return (a.date || "").localeCompare(b.date || ""); });
+  return dated.concat(undated);
+}
+
+function excerpt(a){
+  var p = (a.paras && a.paras[0]) || "";
+  return p.length > 72 ? p.slice(0,72) + "……" : p;
+}
+function go(route){ location.hash = "#/" + route; }
+function openArticle(id){ location.hash = "#/article/" + id; }
+function byId(id){
+  for(var i = 0; i < ARTICLES.length; i++){ if(ARTICLES[i].id === id) return ARTICLES[i]; }
+  return null;
+}
+
+/* ============ 首页 ============ */
+function panelArticles(cat, limit){
+  var list = catList(cat);
+  /* 首页展示：倒序取最新的 limit 条，但在列表中显示为升序 */
+  var shown = list.slice(-limit).reverse();
+  return shown.map(function(a){
+    return '<li><a onclick="openArticle(\'' + a.id + '\')">' + esc(a.title)
+         + '<span class="art-sub">' + esc(a.sub || "") + '</span></a></li>';
+  }).join("");
+}
+
+/* 合并行业活动 + 笔记，最新在最上面展示 */
+function panelArticlesMixed(limit){
+  var all = catList("observe").concat(catList("notes"));
+  all.sort(function(a,b){ return (b.date || "").localeCompare(a.date || ""); });
+  return all.slice(0, limit).map(function(a){
+    return '<li><a onclick="openArticle(\'' + a.id + '\')">' + esc(a.title)
+         + '<span class="art-sub">' + esc(a.sub || "") + '</span></a></li>';
+  }).join("");
+}
+
+function renderHome(){
+  var p = SITE.profile;
+  var icons = {
+    phone:'<svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2z"/></svg>',
+    mail:'<svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>',
+    firm:'<svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M8 6h8M8 10h8M8 14h8M8 18h8"/></svg>',
+    addr:'<svg viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>'
+  };
+
+  var statsHtml = SITE.stats.map(function(s){
+    return '<div class="stat">'
+      + '<div class="stat-num">' + esc(s.num) + '<em>+</em></div>'
+      + '<div class="stat-label">' + esc(s.label) + '</div>'
+      + '</div>';
+  }).join("");
+
+  return '<section class="hero"><div class="wrap hero-inner">'
+    + '<div class="hero-photo"><div class="photo-frame">'
+    +   '<img id="heroImg" alt="王雅茜律师个人照片" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=photo-fallback>王雅茜<br>知识产权律师</div>\'">'
+    + '</div></div>'
+    + '<div class="hero-info">'
+    +   '<h1>' + esc(p.name) + '</h1>'
+    +   '<div class="role">' + esc(p.title) + '</div>'
+    +   '<div class="role-divider"></div>'
+    +   '<p class="hero-intro">' + esc(p.intro) + '</p>'
+    +     '<ul class="hero-contact">'
+    +     '<li><a class="copy-item" href="tel:15000742068" data-copy="15000742068"><span class="ico">' + icons.phone + '</span><span class="copy-text">15000742068</span></a></li>'
+    +     '<li><a class="copy-item" href="mailto:15000742068@163.com" data-copy="15000742068@163.com"><span class="ico">' + icons.mail  + '</span><span class="copy-text">15000742068@163.com</span></a></li>'
+    +     '<li><a class="copy-item" href="javascript:void(0)" data-copy="上海如闻律师事务所"><span class="ico">' + icons.firm  + '</span><span class="copy-text">上海如闻律师事务所</span></a></li>'
+    +     '<li><a class="copy-item" href="javascript:void(0)" data-copy="上海市黄浦区淮海中路8号13楼"><span class="ico">' + icons.addr  + '</span><span class="copy-text">上海市黄浦区淮海中路8号13楼</span></a></li>'
+    +   '</ul>'
+    + '</div>'
+    + '</div></section>'
+    + '<div class="wrap"><div class="panels">'
+
+    /* 左上：代理业绩 */
+    + '<div class="panel">'
+    +   '<div class="panel-head"><h2 class="panel-title-link" onclick="go(\'achievements\')">代理业绩</h2>'
+    +     '<span class="more" onclick="go(\'achievements\')">全部业绩 →</span></div>'
+    +   '<ul class="achieve-list">' + SITE.achievementsBrief.map(function(t){ return "<li>" + esc(t) + "</li>"; }).join("") + '</ul>'
+    + '</div>'
+
+    /* 右上：专业研究 */
+    + '<div class="panel">'
+    +   '<div class="panel-head"><h2 class="panel-title-link" onclick="go(\'research\')">专业研究</h2>'
+    +     '<span class="more" onclick="go(\'research\')">全部研究 →</span></div>'
+    +   '<ul class="art-list">' + panelArticles("research", 3) + '</ul>'
+    + '</div>'
+
+    /* 左下：精选案例 */
+    + '<div class="panel">'
+    +   '<div class="panel-head"><h2 class="panel-title-link" onclick="go(\'cases\')">精选案例</h2>'
+    +     '<span class="more" onclick="go(\'cases\')">全部案例 →</span></div>'
+    +   '<ul class="art-list">' + panelArticles("cases", 3) + '</ul>'
+    + '</div>'
+
+    /* 右下：行业活动 / 笔记 */
+    + '<div class="panel">'
+    +   '<div class="panel-head"><h2 class="panel-title-link" onclick="go(\'observe\')">行业活动/笔记</h2>'
+    +     '<span class="more" onclick="go(\'observe\')">全部 →</span></div>'
+    +   '<ul class="art-list">' + panelArticlesMixed(3) + '</ul>'
+    + '</div>'
+
+    + '</div>'
+
+    /* 数据条 */
+    + '<div class="stats">' + statsHtml + '</div>'
+
+    + '</div>';
+}
+
+/* ============ 列表页 ============ */
+function listCards(cat){
+  var list = catList(cat);
+  if(!list.length) return '';
+  return list.map(function(a){
+    return '<div class="list-card" onclick="openArticle(\'' + a.id + '\')">'
+      + '<h3>' + esc(a.title) + '</h3>'
+      + '<div class="sub">' + esc(a.sub || "") + '</div>'
+      + '<div class="excerpt">' + esc(excerpt(a)) + '</div>'
+      + '</div>';
+  }).join("");
+}
+function renderListPage(title, sub, cat){
+  return '<div class="wrap page"><h1 class="page-title">' + title + '</h1>'
+       + '<div class="page-sub">' + sub + '</div>' + listCards(cat) + '</div>';
+}
+function renderNotes(){
+  return '<div class="wrap page"><h1 class="page-title">研究 / 活动 / 笔记</h1>'
+    + '<div class="page-sub">专业研究成果、行业活动记录与随笔笔记的汇总索引</div>'
+    + '<div class="group-label">专业研究</div>' + listCards("research")
+    + '<div class="group-label">行业活动 / 笔记</div>'
+    + listCards("observe") + listCards("notes") + '</div>';
+}
+
+/* 行业活动 / 笔记 合并列表页 */
+function renderActivityNotes(){
+  return '<div class="wrap page"><h1 class="page-title">行业活动 / 笔记</h1>'
+    + '<div class="page-sub">行业会议、论坛、动态观察与随笔笔记</div>'
+    + listCards("observe") + listCards("notes") + '</div>';
+}
+
+/* ============ 代理业绩页（年份 + 月份） ============ */
+function renderAchievements(){
+  var items = SITE.timeline.map(function(it){
+    return '<div class="tl-item">'
+      + '<div class="tl-year">' + esc(it.year) + '<span class="tl-month">' + esc(it.month) + '</span></div>'
+      + '<div class="tl-text"><p>' + esc(it.text) + '</p></div>'
+      + '</div>';
+  }).join("");
+
+  return '<div class="wrap page">'
+    + '<h1 class="page-title">代理业绩</h1>'
+    + '<div class="page-sub">知识产权一线服务经验与代表性代理成果</div>'
+    + '<div class="timeline">' + items + '</div>'
+    + '</div>';
+}
+
+/* ============ 个人简介页 ============ */
+function renderProfile(){
+  var p = SITE.profile;
+  return '<div class="wrap page"><h1 class="page-title">个人简介</h1>'
+    + '<div class="page-sub">知识产权律师 · 上海如闻律师事务所</div>'
+    + '<div class="profile-block">'
+    +   '<div class="photo-frame"><img id="profileImg" alt="王雅茜律师个人照片" onerror="this.style.display=\'none\';this.parentNode.innerHTML=\'<div class=photo-fallback>王雅茜<br>知识产权律师</div>\'"></div>'
+    +   '<div class="profile-text">'
+    +     '<h2>' + esc(p.name) + '</h2>'
+    +     '<div class="role">' + esc(p.title) + '</div>'
+    +     '<ul class="info-rows">'
+    +       '<li><b>执业机构</b><span>' + esc(p.firm) + '</span></li>'
+    +       '<li><b>办公地址</b><span>' + esc(p.address) + '</span></li>'
+    +       '<li><b>联系电话</b><span>' + esc(p.phone) + '</span></li>'
+    +       '<li><b>电子邮箱</b><span>' + esc(p.email) + '</span></li>'
+    +     '</ul>'
+    +     '<p style="margin-top:18px;font-size:15px;color:#453d52;text-align:justify;line-height:1.9;">'
+    +       esc(p.intro)
+    +     '</p>'
+    +   '</div>'
+    + '</div></div>';
+}
+
+/* ============ 文章阅读页 ============ */
+function renderArticle(id){
+  var a = byId(id);
+  if(!a){
+    return '<div class="wrap page"><h1 class="page-title">文章未找到</h1>'
+      + '<div class="page-sub"><span class="back-link" onclick="go(\'home\')">← 返回首页</span></div></div>';
+  }
+  var body = a.paras.map(function(t){
+    if(t.indexOf("## ") === 0)  return '<h2>' + esc(t.slice(3)) + '</h2>';
+    if(t.indexOf("### ") === 0) return '<h3>' + esc(t.slice(4)) + '</h3>';
+    if(t.indexOf("!img ") === 0){
+      var parts = t.slice(5).split("|");
+      var url = parts[0].trim();
+      var cap = parts.length > 1 ? parts[1].trim() : "";
+      var isRealImg = /\.(jpg|jpeg|png|gif|webp)$/i.test(url);
+      if(isRealImg){
+        return '<div class="article-img"><img src="' + esc(url) + '" alt="' + esc(cap || url) + '" onerror="this.parentNode.innerHTML=\'<div style=\"padding:56px 24px;text-align:center;color:#8a7346;font-size:14px;letter-spacing:4px;\">图片待补充</div>\'">' + (cap ? '<div class="article-img-cap">' + esc(cap) + '</div>' : '') + '</div>';
+      } else {
+        return '<div class="article-img"><div style="padding:52px 24px;text-align:center;color:#8a7346;font-size:14px;letter-spacing:4px;text-indent:4px;line-height:1.7;">' + esc(url) + (cap ? '<br><span style="font-size:12.5px;opacity:.8;">' + esc(cap) + '</span>' : '') + '</div></div>';
+      }
+    }
+    /* 支持段落内的 HTML 标签（加粗、缩小等） */
+    if(/<[a-z][\s\S]*>/i.test(t)){
+      return '<p>' + t + '</p>';
+    }
+    return '<p>' + esc(t) + '</p>';
+  }).join("");
+
+  var backRoute = a.cat === "cases" ? "cases"
+                : a.cat === "practice" ? "practice"
+                : a.cat === "observe" ? "observe"
+                : a.cat === "research" ? "research" : "notes";
+
+  return '<div class="wrap page"><div class="article-box">'
+    + '<span class="back-link" onclick="go(\'' + backRoute + '\')">← 返回列表</span>'
+    + '<h1>' + esc(a.title) + '</h1>'
+    + '<div class="art-sub-line">' + esc(a.sub || "") + '</div>'
+    + '<div class="divider"></div>'
+    + body
+    + '<div class="article-source">' + esc(a.source || "") + '</div>'
+    + '</div></div>';
+}
+function renderArticle(id){
+  var a = byId(id);
+  if(!a){
+    return '<div class="wrap page"><h1 class="page-title">文章未找到</h1>'
+      + '<div class="page-sub"><span class="back-link" onclick="go(\'home\')">← 返回首页</span></div></div>';
+  }
+  var body = a.paras.map(function(t){
+    if(t.indexOf("## ") === 0)  return '<h2>' + esc(t.slice(3)) + '</h2>';
+    if(t.indexOf("### ") === 0) return '<h3>' + esc(t.slice(4)) + '</h3>';
+    if(t.indexOf("!img ") === 0){
+      var parts = t.slice(5).split("|");
+      var url = parts[0].trim();
+      var cap = parts.length > 1 ? parts[1].trim() : "";
+      var isRealImg = /\.(jpg|jpeg|png|gif|webp)$/i.test(url);
+      if(isRealImg){
+        return '<div class="article-img">'
+          + '<img src="' + esc(url) + '" alt="' + esc(cap) + '" '
+          + 'onerror="this.onerror=null;this.style.display=\'none\';this.parentNode.classList.add(\'img-missing\');">'
+          + (cap ? '<div class="article-img-cap">' + esc(cap) + '</div>' : '')
+          + '</div>';
+      } else {
+        return '<div class="article-img"><div class="img-placeholder">'
+          + esc(url)
+          + (cap ? '<br><span>' + esc(cap) + '</span>' : '')
+          + '</div></div>';
+      }
+    }
+    if(/<[a-z][\s\S]*>/i.test(t)){
+      return '<p>' + t + '</p>';
+    }
+    return '<p>' + esc(t) + '</p>';
+  }).join("");
+
+  var backRoute = a.cat === "cases" ? "cases"
+                : a.cat === "practice" ? "practice"
+                : a.cat === "observe" ? "observe"
+                : a.cat === "research" ? "research" : "notes";
+
+  return '<div class="wrap page"><div class="article-box">'
+    + '<span class="back-link" onclick="go(\'' + backRoute + '\')">← 返回列表</span>'
+    + '<h1>' + esc(a.title) + '</h1>'
+    + '<div class="art-sub-line">' + esc(a.sub || "") + '</div>'
+    + '<div class="divider"></div>'
+    + body
+    + '<div class="article-source">' + esc(a.source || "") + '</div>'
+    + '</div></div>';
+}
+
+/* ============ 联系页 ============ */
+function renderContact(){
+  var p = SITE.profile;
+  return '<div class="wrap page"><h1 class="page-title">咨询预约 / 联系方式</h1>'
+    + '<div class="page-sub">欢迎就商标、专利、版权、商业秘密、反不正当竞争等知识产权事务预约咨询</div>'
+    + '<div class="contact-grid">'
+    +   '<div class="contact-info"><h3>联系方式</h3><ul>'
+    +     '<li><b>电话</b><span>' + esc(p.phone) + '</span></li>'
+    +     '<li><b>邮箱</b><span>' + esc(p.email) + '</span></li>'
+    +     '<li><b>律所</b><span>' + esc(p.firm) + '</span></li>'
+    +     '<li><b>地址</b><span>' + esc(p.address) + '</span></li>'
+    +   '</ul></div>'
+    +   '<div class="contact-qr">'
+    +     '<h3>微信咨询</h3>'
+    +     '<div class="qr-wrap"><img src="images/weixin.png" alt="王雅茜律师微信二维码" class="qr-img"></div>'
+    +     '<p class="qr-tip">扫码添加微信，沟通更直接</p>'
+    +     '<a class="survey-btn" href="https://wj.qq.com/s2/28085753/5uc9/" target="_blank" rel="noopener">在线预约咨询 →</a>'
+    +   '</div>'
+    + '</div></div>';
+}
+function submitBook(e){
+  e.preventDefault();
+  var name  = document.getElementById("fName").value.trim();
+  var phone = document.getElementById("fPhone").value.trim();
+  var msg   = document.getElementById("fMsg").value.trim();
+  var ok = document.getElementById("formOk"), err = document.getElementById("formErr");
+  if(!name || !phone || !msg){ err.style.display = "block"; ok.style.display = "none"; return false; }
+  err.style.display = "none"; ok.style.display = "block";
+  document.getElementById("bookForm").reset();
+  return false;
+}
+
+/* ============ 路由 ============ */
+function currentRoute(){
+  var h = location.hash.replace(/^#\/?/, "");
+  var parts = h.split("/");
+  return { page: parts[0] || "home", arg: parts[1] || "" };
+}
+function render(){
+  var r = currentRoute(), v = document.getElementById("view"), html = "";
+  var page = r.page;
+
+  if(page === "article")           html = renderArticle(r.arg);
+  else if(page === "profile")      html = renderProfile();
+  else if(page === "practice")     html = renderListPage("业务领域", "以市场主体构建壁垒，以裁判视角研判争议", "practice");
+  else if(page === "achievements") html = renderAchievements();
+  else if(page === "observe")      html = renderActivityNotes();
+  else if(page === "cases")        html = renderListPage("精选案例", "代理及研究的典型知识产权案例评析", "cases");
+  else if(page === "research")     html = renderListPage("专业研究", "知识产权刑事保护等方向的研究报告与专业文章", "research");
+  else if(page === "notes")        html = renderNotes();
+  else if(page === "contact")      html = renderContact();
+  else                             html = renderHome();
+
+  v.innerHTML = html;
+
+  /* 图片运行时赋值 */
+  var hi = document.getElementById("heroImg"), pi = document.getElementById("profileImg");
+  if(hi) hi.src = SITE.profile.image;
+  if(pi) pi.src = SITE.profile.image;
+
+  /* 导航高亮 */
+  var links = document.querySelectorAll(".nav-links a");
+  var active = page;
+  if(page === "article"){
+    var a = byId(r.arg);
+    if(a){
+      if(a.cat === "cases")          active = "cases";
+      else if(a.cat === "practice")  active = "practice";
+      else if(a.cat === "observe")   active = "notes";
+      else if(a.cat === "notes")     active = "notes";
+      else if(a.cat === "research")  active = "notes";
+    } else {
+      active = "home";
+    }
+  }
+  if(page === "observe") active = "notes";
+  for(var i = 0; i < links.length; i++){
+    links[i].className = (links[i].getAttribute("data-route") === active) ? "active" : "";
+  }
+  document.getElementById("navLinks").classList.remove("open");
+  window.scrollTo(0, 0);
+  updateToTop();
+}
+
+/* ============ 回到顶部 ============ */
+var toTopBtn = document.getElementById("toTop");
+function updateToTop(){
+  if(currentRoute().page === "article") toTopBtn.classList.add("show");
+  else toTopBtn.classList.remove("show");
+}
+toTopBtn.onclick = function(){ window.scrollTo({ top:0, behavior:"smooth" }); };
+window.addEventListener("scroll", updateToTop);
+window.addEventListener("hashchange", render);
+
+/* ============ 移动端菜单 ============ */
+document.getElementById("navToggle").onclick = function(){
+  document.getElementById("navLinks").classList.toggle("open");
+};
+/* ============ 点击复制联系方式 ============ */
+function showCopyToast(msg){
+  var old = document.querySelector(".copy-toast");
+  if(old) old.parentNode.removeChild(old);
+  var t = document.createElement("div");
+  t.className = "copy-toast";
+  t.textContent = msg || "已复制";
+  document.body.appendChild(t);
+  setTimeout(function(){ t.classList.add("show"); }, 10);
+  setTimeout(function(){
+    t.classList.remove("show");
+    setTimeout(function(){ if(t.parentNode) t.parentNode.removeChild(t); }, 300);
+  }, 1600);
+}
+
+function fallbackCopy(text){
+  var ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly","");
+  ta.style.position = "fixed";
+  ta.style.left = "-9999px";
+  ta.style.top = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  ta.setSelectionRange(0, ta.value.length);
+  try{
+    var ok = document.execCommand("copy");
+    if(ok) showCopyToast("已复制：" + text);
+    else showCopyToast("复制失败，请手动选择");
+  }catch(e){
+    showCopyToast("复制失败，请手动选择");
+  }
+  document.body.removeChild(ta);
+}
+
+function copyText(text){
+  if(navigator.clipboard && window.isSecureContext){
+    return navigator.clipboard.writeText(text).then(function(){
+      showCopyToast("已复制：" + text);
+    }).catch(function(){
+      fallbackCopy(text);
+    });
+  } else {
+    fallbackCopy(text);
+  }
+}
+
+document.addEventListener("click", function(e){
+  var el = e.target.closest ? e.target.closest(".copy-item") : null;
+  if(!el) return;
+  var text = el.getAttribute("data-copy");
+  if(!text) return;
+  copyText(text);
+});
+
+/* ============ 启动 ============ */
+render();
+</script>
+</body>
+</html>
